@@ -1,378 +1,1860 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#080d1b">
-<title>Misión examen | Estudia jugando</title>
-<style>
-:root{--ink:#18352e;--muted:#62756f;--paper:#fbfaf5;--panel:#fff;--line:#dce5df;--green:#176b50;--mint:#e2f4e9;--yellow:#ffd76b;--pink:#fbe8e2;--shadow:0 12px 35px #173f3510}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-rounded,"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.5}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #e7a923;outline-offset:3px}.wrap{max-width:1000px;margin:auto;padding:24px 18px 56px}.hero{background:var(--green);color:white;border-radius:26px;padding:28px;position:relative;overflow:hidden}.hero:after{content:"✦";font-size:180px;color:#ffffff12;position:absolute;right:25px;top:-50px;pointer-events:none}.eyebrow{text-transform:uppercase;font-size:.75rem;letter-spacing:.14em;font-weight:800;color:#bdebd0}.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:10px 0}.hero p{max-width:600px;color:#e0f0e6;margin-bottom:0}.toprow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.scorepill{background:#ffffff1c;border:1px solid #ffffff35;border-radius:999px;padding:8px 14px;font-weight:750;white-space:nowrap}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.stat{padding:14px 16px}.stat strong{display:block;font-size:1.5rem}.stat span{color:var(--muted);font-size:.85rem}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}.tab,.btn{border:1px solid var(--line);border-radius:12px;padding:11px 15px;background:white;color:var(--ink);font-weight:700;min-height:44px}.tab.active,.btn.primary{background:var(--green);color:white;border-color:var(--green)}.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 18px}.controls label{font-weight:750}.controls select{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}.panel{padding:clamp(17px,4vw,28px)}.hidden{display:none!important}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}.pill{font-size:.8rem;font-weight:800;border-radius:999px;padding:5px 10px;background:#f0f4ef}.muted{color:var(--muted)}.flashcard{width:100%;min-height:250px;border:1px solid #dbe8df;border-radius:20px;background:linear-gradient(145deg,#f1f8f2,#fff9e9);color:var(--ink);padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.flashcard .label{font-size:.75rem;letter-spacing:.13em;font-weight:850;color:var(--green)}.flashcard .main{font-size:clamp(1.35rem,4vw,2rem);font-weight:850;max-width:650px;margin:15px 0}.flashcard .hint{font-size:.9rem;color:var(--muted)}.actions{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:15px}.actions .right{display:flex;gap:8px;flex-wrap:wrap}.question{font-size:clamp(1.3rem,4vw,1.8rem);font-weight:850;line-height:1.25;margin:14px 0 20px}.option{display:block;width:100%;text-align:left;padding:14px 15px;margin:9px 0;border:1px solid var(--line);border-radius:12px;background:white;color:var(--ink);min-height:50px}.option:hover:not(:disabled){border-color:var(--green);background:#f5faf6}.option.chosen{outline:2px solid var(--green);background:#edf7f0}.option.good{background:#e3f5e8;border-color:#2b8953}.option.bad{background:#fff0ec;border-color:#c75a48}.feedback{padding:12px;border-radius:12px;margin-top:12px;background:#f4f6f2}.progress{height:8px;background:#e9eee9;border-radius:999px;overflow:hidden;margin-top:18px}.progress span{display:block;height:100%;background:var(--yellow);width:0;transition:width .2s}.topic-note{font-size:.9rem;color:var(--muted);margin-top:18px}.review-item{padding:13px;background:#f7f8f3;border-radius:12px;margin-top:9px}.footer{text-align:center;font-size:.85rem;color:var(--muted);margin-top:22px}.toast{font-weight:750;color:var(--green)}@media(max-width:540px){.wrap{padding:12px 12px 35px}.hero{padding:23px 20px}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:1.25rem}.stat span{font-size:.75rem}.tab{flex:1;padding:10px 8px;font-size:.9rem}.controls select{min-width:100%}.flashcard{min-height:230px}.actions .right{width:100%}.actions .right .btn{flex:1}.actions>.btn{flex:1}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d1b">
+  <title>Misión examen | Estudia jugando</title>
+  <style>
+    :root {
+      --ink: #18352e;
+      --muted: #62756f;
+      --paper: #fbfaf5;
+      --panel: #fff;
+      --line: #dce5df;
+      --green: #176b50;
+      --mint: #e2f4e9;
+      --yellow: #ffd76b;
+      --pink: #fbe8e2;
+      --shadow: 0 12px 35px #173f3510
+    }
 
-/* Atlas visual añadido */
-.visual-atlas{margin:18px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.atlas-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}
-.atlas-card h2{font-size:1.08rem;margin:0 0 5px}
-.atlas-card p{margin:5px 0 0;color:var(--muted);font-size:.92rem}
-.atlas-card svg{display:block;width:100%;height:auto;max-height:250px;margin:8px auto}
-.atlas-card .memory-hook{margin-top:10px;padding:10px 12px;background:#f1f7f1;border-radius:10px;font-size:.9rem}
-.atlas-card .memory-hook strong{color:var(--green)}
-.atlas-wide{grid-column:1/-1}
-.challenge-strip{margin:15px 0;background:#fff6d9;border:1px solid #f2dfa0;border-radius:16px;padding:16px}
-.challenge-strip h2{font-size:1.05rem;margin:0 0 6px}
-.challenge-strip p{margin:0}
-@media(max-width:650px){.visual-atlas{grid-template-columns:1fr}.atlas-wide{grid-column:auto}}
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.5
+    }
+
+    button,
+    select {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    button:focus-visible,
+    select:focus-visible {
+      outline: 3px solid #e7a923;
+      outline-offset: 3px
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: auto;
+      padding: 24px 18px 56px
+    }
+
+    .hero {
+      background: var(--green);
+      color: white;
+      border-radius: 26px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero:after {
+      content: "✦";
+      font-size: 180px;
+      color: #ffffff12;
+      position: absolute;
+      right: 25px;
+      top: -50px;
+      pointer-events: none
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      font-weight: 800;
+      color: #bdebd0
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      margin: 10px 0
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #e0f0e6;
+      margin-bottom: 0
+    }
+
+    .toprow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .scorepill {
+      background: #ffffff1c;
+      border: 1px solid #ffffff35;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 750;
+      white-space: nowrap
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .stat,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    .stat {
+      padding: 14px 16px
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .85rem
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 20px 0 14px
+    }
+
+    .tab,
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 11px 15px;
+      background: white;
+      color: var(--ink);
+      font-weight: 700;
+      min-height: 44px
+    }
+
+    .tab.active,
+    .btn.primary {
+      background: var(--green);
+      color: white;
+      border-color: var(--green)
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0 18px
+    }
+
+    .controls label {
+      font-weight: 750
+    }
+
+    .controls select {
+      flex: 1;
+      min-width: 220px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      color: var(--ink)
+    }
+
+    .panel {
+      padding: clamp(17px, 4vw, 28px)
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    .panelhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px
+    }
+
+    .pill {
+      font-size: .8rem;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: #f0f4ef
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 250px;
+      border: 1px solid #dbe8df;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #f1f8f2, #fff9e9);
+      color: var(--ink);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center
+    }
+
+    .flashcard .label {
+      font-size: .75rem;
+      letter-spacing: .13em;
+      font-weight: 850;
+      color: var(--green)
+    }
+
+    .flashcard .main {
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      font-weight: 850;
+      max-width: 650px;
+      margin: 15px 0
+    }
+
+    .flashcard .hint {
+      font-size: .9rem;
+      color: var(--muted)
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: 15px
+    }
+
+    .actions .right {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .question {
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      font-weight: 850;
+      line-height: 1.25;
+      margin: 14px 0 20px
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 14px 15px;
+      margin: 9px 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      color: var(--ink);
+      min-height: 50px
+    }
+
+    .option:hover:not(:disabled) {
+      border-color: var(--green);
+      background: #f5faf6
+    }
+
+    .option.chosen {
+      outline: 2px solid var(--green);
+      background: #edf7f0
+    }
+
+    .option.good {
+      background: #e3f5e8;
+      border-color: #2b8953
+    }
+
+    .option.bad {
+      background: #fff0ec;
+      border-color: #c75a48
+    }
+
+    .feedback {
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 12px;
+      background: #f4f6f2
+    }
+
+    .progress {
+      height: 8px;
+      background: #e9eee9;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 18px
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      background: var(--yellow);
+      width: 0;
+      transition: width .2s
+    }
+
+    .topic-note {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: 18px
+    }
+
+    .review-item {
+      padding: 13px;
+      background: #f7f8f3;
+      border-radius: 12px;
+      margin-top: 9px
+    }
+
+    .footer {
+      text-align: center;
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 22px
+    }
+
+    .toast {
+      font-weight: 750;
+      color: var(--green)
+    }
+
+    @media(max-width:540px) {
+      .wrap {
+        padding: 12px 12px 35px
+      }
+
+      .hero {
+        padding: 23px 20px
+      }
+
+      .stats {
+        gap: 7px
+      }
+
+      .stat {
+        padding: 11px
+      }
+
+      .stat strong {
+        font-size: 1.25rem
+      }
+
+      .stat span {
+        font-size: .75rem
+      }
+
+      .tab {
+        flex: 1;
+        padding: 10px 8px;
+        font-size: .9rem
+      }
+
+      .controls select {
+        min-width: 100%
+      }
+
+      .flashcard {
+        min-height: 230px
+      }
+
+      .actions .right {
+        width: 100%
+      }
+
+      .actions .right .btn {
+        flex: 1
+      }
+
+      .actions>.btn {
+        flex: 1
+      }
+    }
+
+    /* Atlas visual añadido */
+    .visual-atlas {
+      margin: 18px 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px
+    }
+
+    .atlas-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 17px;
+      box-shadow: var(--shadow);
+      min-width: 0
+    }
+
+    .atlas-card h2 {
+      font-size: 1.08rem;
+      margin: 0 0 5px
+    }
+
+    .atlas-card p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: .92rem
+    }
+
+    .atlas-card svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      margin: 8px auto
+    }
+
+    .atlas-card .memory-hook {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: #f1f7f1;
+      border-radius: 10px;
+      font-size: .9rem
+    }
+
+    .atlas-card .memory-hook strong {
+      color: var(--green)
+    }
+
+    .atlas-wide {
+      grid-column: 1/-1
+    }
+
+    .challenge-strip {
+      margin: 15px 0;
+      background: #fff6d9;
+      border: 1px solid #f2dfa0;
+      border-radius: 16px;
+      padding: 16px
+    }
+
+    .challenge-strip h2 {
+      font-size: 1.05rem;
+      margin: 0 0 6px
+    }
+
+    .challenge-strip p {
+      margin: 0
+    }
+
+    @media(max-width:650px) {
+      .visual-atlas {
+        grid-template-columns: 1fr
+      }
+
+      .atlas-wide {
+        grid-column: auto
+      }
+    }
 
 
-/* === REDISEÑO EDITORIAL 2.0 === */
-:root{
- --ink:#f4f7ff;--muted:#a7b4d2;--paper:#080d1b;--panel:#111a2e;--line:#283653;
- --green:#7c5cff;--mint:#1b2746;--yellow:#ffd166;--pink:#ff6b8a;
- --shadow:0 24px 70px #0007;
-}
-html{scroll-behavior:smooth}
-body{
- background:
-  radial-gradient(ellipse at 12% 0%,#32236b66,transparent 34rem),
-  radial-gradient(ellipse at 90% 18%,#075e7160,transparent 32rem),
-  #080d1b;
- color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
- line-height:1.55;min-height:100vh
-}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;z-index:-1;
- background-image:radial-gradient(#9eb5ff 0.7px,transparent .7px);background-size:22px 22px}
-.wrap{width:min(1240px,calc(100% - 36px));margin:0 auto;padding:30px 0 70px}
-.hero{
- position:relative;overflow:hidden;padding:clamp(28px,5vw,58px);
- border:1px solid #6475a455;border-radius:30px;
- background:linear-gradient(120deg,#171f3d 0%,#251d50 48%,#0c3948 100%);
- box-shadow:0 30px 90px #0005;margin-bottom:22px
-}
-.hero:after{content:"✦";position:absolute;right:6%;top:4%;font-size:clamp(100px,18vw,220px);line-height:1;color:#ffffff0b;transform:rotate(12deg);pointer-events:none}
-.toprow{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:25px}
-.eyebrow,.scorepill,.pill{border:1px solid #ffffff28;background:#ffffff0c;color:#dce6ff;border-radius:999px;padding:8px 13px;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.scorepill{color:#ffe39b;letter-spacing:0;text-transform:none;font-size:.9rem}
-.hero h1{position:relative;z-index:1;font-size:clamp(2.6rem,7vw,5.7rem);line-height:.98;letter-spacing:-.065em;max-width:850px;margin:0 0 18px;font-weight:900}
-.hero h1 span{background:linear-gradient(90deg,#a99aff,#63e3d3 75%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{position:relative;z-index:1;max-width:650px;color:#c3cce5;font-size:clamp(1rem,2vw,1.18rem);margin:0}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0 26px}
-.stat{position:relative;overflow:hidden;background:linear-gradient(145deg,#151f36,#10182a);border:1px solid var(--line);border-radius:20px;padding:20px 22px;box-shadow:0 10px 30px #0002}
-.stat:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-35px;top:-35px;background:#8d7bff12}
-.stat strong{display:block;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.05em;color:#fff}
-.stat span{display:block;color:var(--muted);font-size:.88rem;margin-top:7px}
-.tabs{display:flex;gap:9px;padding:7px;background:#0e1526;border:1px solid var(--line);border-radius:18px;margin:0 0 15px;overflow-x:auto}
-.tab{white-space:nowrap;border:1px solid transparent;background:transparent;color:#aebbd8;border-radius:12px;padding:12px 17px;font:inherit;font-weight:800;cursor:pointer;transition:.2s}
-.tab:hover{background:#ffffff0a;color:white}
-.tab.active{background:linear-gradient(120deg,#7c5cff,#4b9cf5);color:white;box-shadow:0 8px 24px #624de544}
-.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 24px;padding:15px 18px;background:#111a2e;border:1px solid var(--line);border-radius:16px;color:var(--muted)}
-select{background:#0b1222;color:#f4f7ff;border:1px solid #354362;border-radius:10px;padding:10px 13px;font:inherit;max-width:100%}
-.visual-atlas{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin:22px 0 28px}
-.atlas-card{grid-column:span 2;min-width:0;background:linear-gradient(155deg,#151f36,#101727);border:1px solid #2d3a58;border-radius:22px;padding:20px;box-shadow:0 14px 34px #0002;transition:transform .22s,border-color .22s}
-.atlas-card:hover{transform:translateY(-4px);border-color:#7c5cff99}
-.atlas-card.atlas-wide{grid-column:span 3}
-.atlas-card h2,.atlas-card h3{color:#f5f7ff;margin:0 0 8px;letter-spacing:-.025em}
-.atlas-card p,.atlas-card li{color:#b7c3df;font-size:.94rem}
-.atlas-card svg{width:100%;height:auto;max-height:245px;display:block;margin:12px auto 6px}
-.atlas-card svg text{font-family:inherit}
-.memory-hook{background:#201d40;border:1px solid #55459b;border-radius:13px;padding:12px 14px;color:#d9d4ff;font-size:.88rem;margin-top:14px}
-.challenge-strip{border:1px solid #4e4a83;background:linear-gradient(110deg,#211d43,#112d3d);border-radius:20px;padding:22px 25px;margin:0 0 25px;color:#e5e7ff}
-.challenge-strip strong{color:#ffe08b}
-.panel{background:linear-gradient(150deg,#141e34,#0f1728);border:1px solid #2b3957;border-radius:24px;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow);margin:20px 0}
-.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-.panelhead .muted,.muted{color:var(--muted)}
-.flashcard{width:100%;min-height:250px;border:1px solid #6656b5;border-radius:20px;padding:clamp(24px,5vw,50px);color:white;background:radial-gradient(ellipse at 80% 0%,#5c4bb444,transparent 45%),linear-gradient(145deg,#1e2850,#132e3d);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;text-align:center;cursor:pointer;transition:transform .2s,border-color .2s}
-.flashcard:hover{transform:translateY(-2px);border-color:#a89aff}
-.flashcard .label{font-size:.75rem;font-weight:900;letter-spacing:.18em;color:#a9e9e1}
-.flashcard .main{font-size:clamp(1.5rem,4vw,2.65rem);font-weight:850;line-height:1.2;letter-spacing:-.04em;max-width:780px}
-.flashcard .hint{color:#aebbd8;font-size:.95rem}
-.btn{border:1px solid #3b496a;background:#17223a;color:#e8edff;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer;transition:.18s}
-.btn:hover:not(:disabled){transform:translateY(-2px);border-color:#8b7cff;background:#222d4b}
-.btn.primary{background:linear-gradient(110deg,#795bff,#438eea);border-color:transparent;color:white;box-shadow:0 8px 20px #5b4bc533}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
-.actions .right{display:flex;gap:10px;flex-wrap:wrap}
-.topic-note{color:var(--muted);font-size:.92rem;margin:17px 0 0}
-.question{font-size:clamp(1.3rem,3vw,2rem);font-weight:850;letter-spacing:-.03em;margin:15px 0 22px}
-#options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.option{display:block;width:100%;text-align:left;padding:17px 18px;border:1px solid #344260;border-radius:15px;background:#111a2e;color:#dce5ff;font:inherit;cursor:pointer;transition:.18s}
-.option:hover{border-color:#8d7bff;background:#1a2340}
-.option.selected{border-color:#9584ff;background:#29234d}
-.option.correct{border-color:#38cfa7;background:#10372f}
-.option.wrong{border-color:#ff718c;background:#3b1e32}
-.feedback{padding:15px 17px;border-radius:14px;background:#1a2741;border:1px solid #344260;margin-top:16px}
-.hidden{display:none!important}
-footer,.footer{color:#8998b8;text-align:center;font-size:.82rem;padding:22px}
-button:focus-visible,select:focus-visible{outline:3px solid #a99aff;outline-offset:3px}
-@media(max-width:800px){.atlas-card{grid-column:span 3}.atlas-card.atlas-wide{grid-column:span 3}}
-@media(max-width:560px){.wrap{width:min(100% - 22px,1240px);padding-top:12px}.hero{padding:24px 20px;border-radius:23px}.toprow{align-items:flex-start}.eyebrow{font-size:.65rem}.stats{gap:8px}.stat{padding:14px 12px;border-radius:15px}.stat span{font-size:.76rem}.tabs{border-radius:14px}.tab{padding:11px 13px;font-size:.88rem}.visual-atlas{display:block}.atlas-card,.atlas-card.atlas-wide{margin-bottom:13px;padding:17px}.panel{padding:18px;border-radius:19px}#options{grid-template-columns:1fr}.actions .right{width:100%}.actions .btn{flex:1}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+    /* === REDISEÑO EDITORIAL 2.0 === */
+    :root {
+      --ink: #f4f7ff;
+      --muted: #a7b4d2;
+      --paper: #080d1b;
+      --panel: #111a2e;
+      --line: #283653;
+      --green: #7c5cff;
+      --mint: #1b2746;
+      --yellow: #ffd166;
+      --pink: #ff6b8a;
+      --shadow: 0 24px 70px #0007;
+    }
 
-</style>
-<style>
-.lab{margin:22px 0}.lab>h2{font-size:1.5rem;margin:0 0 4px}.lab .gr{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:14px}
-.lab .c{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:17px;min-width:0}.lab .w{grid-column:1/-1}.lab h3{margin:0 0 4px;font-size:1.1rem}
-.lab svg{width:100%;height:auto;display:block;margin:8px 0}.hs{cursor:pointer}.hs circle{fill:var(--yellow);stroke:#080d1b;stroke-width:2}.hs text{font-size:11px;font-weight:800;fill:#080d1b;pointer-events:none}.hs:hover circle,.hs:focus circle,.hs.on circle{fill:#fff}.hs:focus{outline:none}
-.info{background:var(--mint);border-radius:12px;padding:12px 14px;min-height:76px}.info b{color:var(--yellow)}.ca{color:#9fe8d0;font-weight:800}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.chip{border:1px solid var(--line);background:var(--mint);color:var(--ink);border-radius:999px;padding:8px 12px;font-weight:700;min-height:40px}.chip.on{background:var(--green);border-color:var(--green)}
-.rock{display:flex;align-items:center;gap:14px;margin:10px 0}.blob{width:76px;height:64px;flex:none;border-radius:42% 58% 46% 54%/55% 45% 58% 42%;border:2px solid #fff3}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.three button{border:1px solid var(--line);background:var(--mint);color:var(--ink);border-radius:12px;padding:10px 4px;font-weight:750;min-height:48px}.three button:hover{border-color:var(--yellow)}
-.lat{width:100%;accent-color:var(--yellow);margin:4px 0}.traps{margin:0;padding-left:20px}.traps li{margin:7px 0}
-@media(max-width:700px){.lab .gr{grid-template-columns:1fr}}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-</style>
-<style>.sw{position:relative}.pop{position:absolute;z-index:5;width:min(290px,82%);background:#fff7dc;color:#1c2340;border-radius:14px;padding:14px 34px 14px 16px;box-shadow:0 12px 40px #000b;animation:pp .2s}.pop b{font-size:1.12rem}.pop .ca{color:#0b6b57}.pop .x{position:absolute;top:4px;right:6px;border:0;background:none;font-size:1.5rem;line-height:1;color:#1c2340;min-width:36px;min-height:36px}.pop .tip{margin-top:9px;padding:8px 10px;background:#ffe3a0;border-radius:9px;font-size:.92rem}@keyframes pp{from{opacity:0;transform:translateY(8px) scale(.95)}}.hs circle{r:12}.wrap{width:80vw;max-width:none}@media(max-width:900px){.wrap{width:94vw}}body{font-size:1.08rem}:root{--muted:#d3dcf2}.muted,.topic-note,.stat span,.atlas-card p,.atlas-card li,.controls,.flashcard .hint,.panelhead .muted{color:#d3dcf2}.footer,footer{color:#b8c4e0}.panel,.atlas-card,.lab .c{background:#16213b;border:1px solid #4a5b86}.atlas-card svg{background:#f4f1e6;border-radius:14px;padding:6px;max-height:320px}.flashcard{background:#243066;border:2px solid #9a8cff;color:#fff}.flashcard .main{color:#fff;font-size:clamp(1.8rem,3.5vw,3rem)}.flashcard .label{color:#9ff3e6}.flashcard .hint{color:#e0e7fa}.question{color:#fff}.option{background:#1e2a4a;border:2px solid #5a6c9a;color:#fff}.option:hover:not(:disabled){background:#2b3a66;border-color:#b3a6ff}.option.chosen{background:#3a2f7a;border-color:#b3a6ff;color:#fff}.option.good{background:#0f5a44;border-color:#4ff0bf;color:#fff}.option.bad{background:#6b2140;border-color:#ff8aa5;color:#fff}.feedback{background:#223256;border:1px solid #6b7fb0;color:#fff;font-size:1.05rem}.btn{background:#25335a;border-color:#6b7fb0;color:#fff}.btn.primary{background:linear-gradient(110deg,#795bff,#438eea);border-color:transparent}.tab{color:#e4ebff}.tab.active{color:#fff}.memory-hook{background:#2b2763!important;color:#efeaff}.info{background:#26356b;color:#fff}.chip,.three button{background:#26356b;color:#fff;border-color:#5a6c9a}.review-item{background:#1e2a4a;color:#fff}.pill{color:#fff}.lab svg g[font-size] text{fill:#e4ebff}.option{font-size:1.12rem;padding:16px 18px;border-radius:14px}.option.bad{animation:sk .35s}@keyframes sk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}.tab{font-size:1.02rem}.question{font-size:clamp(1.4rem,4.5vw,2rem)}@media(prefers-reduced-motion:reduce){.option.bad{animation:none}}</style></head>
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 12% 0%, #32236b66, transparent 34rem),
+        radial-gradient(ellipse at 90% 18%, #075e7160, transparent 32rem),
+        #080d1b;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      min-height: 100vh
+    }
+
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .13;
+      z-index: -1;
+      background-image: radial-gradient(#9eb5ff 0.7px, transparent .7px);
+      background-size: 22px 22px
+    }
+
+    .wrap {
+      width: min(1240px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 30px 0 70px
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 58px);
+      border: 1px solid #6475a455;
+      border-radius: 30px;
+      background: linear-gradient(120deg, #171f3d 0%, #251d50 48%, #0c3948 100%);
+      box-shadow: 0 30px 90px #0005;
+      margin-bottom: 22px
+    }
+
+    .hero:after {
+      content: "✦";
+      position: absolute;
+      right: 6%;
+      top: 4%;
+      font-size: clamp(100px, 18vw, 220px);
+      line-height: 1;
+      color: #ffffff0b;
+      transform: rotate(12deg);
+      pointer-events: none
+    }
+
+    .toprow {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px
+    }
+
+    .eyebrow,
+    .scorepill,
+    .pill {
+      border: 1px solid #ffffff28;
+      background: #ffffff0c;
+      color: #dce6ff;
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    .scorepill {
+      color: #ffe39b;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: .9rem
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(2.6rem, 7vw, 5.7rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+      max-width: 850px;
+      margin: 0 0 18px;
+      font-weight: 900
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #a99aff, #63e3d3 75%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      color: #c3cce5;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      margin: 0
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0 26px
+    }
+
+    .stat {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #151f36, #10182a);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px 22px;
+      box-shadow: 0 10px 30px #0002
+    }
+
+    .stat:after {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      right: -35px;
+      top: -35px;
+      background: #8d7bff12
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -.05em;
+      color: #fff
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 7px
+    }
+
+    .tabs {
+      display: flex;
+      gap: 9px;
+      padding: 7px;
+      background: #0e1526;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      margin: 0 0 15px;
+      overflow-x: auto
+    }
+
+    .tab {
+      white-space: nowrap;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #aebbd8;
+      border-radius: 12px;
+      padding: 12px 17px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .tab:hover {
+      background: #ffffff0a;
+      color: white
+    }
+
+    .tab.active {
+      background: linear-gradient(120deg, #7c5cff, #4b9cf5);
+      color: white;
+      box-shadow: 0 8px 24px #624de544
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 24px;
+      padding: 15px 18px;
+      background: #111a2e;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: var(--muted)
+    }
+
+    select {
+      background: #0b1222;
+      color: #f4f7ff;
+      border: 1px solid #354362;
+      border-radius: 10px;
+      padding: 10px 13px;
+      font: inherit;
+      max-width: 100%
+    }
+
+    .visual-atlas {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0 28px
+    }
+
+    .atlas-card {
+      grid-column: span 2;
+      min-width: 0;
+      background: linear-gradient(155deg, #151f36, #101727);
+      border: 1px solid #2d3a58;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 34px #0002;
+      transition: transform .22s, border-color .22s
+    }
+
+    .atlas-card:hover {
+      transform: translateY(-4px);
+      border-color: #7c5cff99
+    }
+
+    .atlas-card.atlas-wide {
+      grid-column: span 3
+    }
+
+    .atlas-card h2,
+    .atlas-card h3 {
+      color: #f5f7ff;
+      margin: 0 0 8px;
+      letter-spacing: -.025em
+    }
+
+    .atlas-card p,
+    .atlas-card li {
+      color: #b7c3df;
+      font-size: .94rem
+    }
+
+    .atlas-card svg {
+      width: 100%;
+      height: auto;
+      max-height: 245px;
+      display: block;
+      margin: 12px auto 6px
+    }
+
+    .atlas-card svg text {
+      font-family: inherit
+    }
+
+    .memory-hook {
+      background: #201d40;
+      border: 1px solid #55459b;
+      border-radius: 13px;
+      padding: 12px 14px;
+      color: #d9d4ff;
+      font-size: .88rem;
+      margin-top: 14px
+    }
+
+    .challenge-strip {
+      border: 1px solid #4e4a83;
+      background: linear-gradient(110deg, #211d43, #112d3d);
+      border-radius: 20px;
+      padding: 22px 25px;
+      margin: 0 0 25px;
+      color: #e5e7ff
+    }
+
+    .challenge-strip strong {
+      color: #ffe08b
+    }
+
+    .panel {
+      background: linear-gradient(150deg, #141e34, #0f1728);
+      border: 1px solid #2b3957;
+      border-radius: 24px;
+      padding: clamp(20px, 4vw, 34px);
+      box-shadow: var(--shadow);
+      margin: 20px 0
+    }
+
+    .panelhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap
+    }
+
+    .panelhead .muted,
+    .muted {
+      color: var(--muted)
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 250px;
+      border: 1px solid #6656b5;
+      border-radius: 20px;
+      padding: clamp(24px, 5vw, 50px);
+      color: white;
+      background: radial-gradient(ellipse at 80% 0%, #5c4bb444, transparent 45%), linear-gradient(145deg, #1e2850, #132e3d);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 17px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .2s, border-color .2s
+    }
+
+    .flashcard:hover {
+      transform: translateY(-2px);
+      border-color: #a89aff
+    }
+
+    .flashcard .label {
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      color: #a9e9e1
+    }
+
+    .flashcard .main {
+      font-size: clamp(1.5rem, 4vw, 2.65rem);
+      font-weight: 850;
+      line-height: 1.2;
+      letter-spacing: -.04em;
+      max-width: 780px
+    }
+
+    .flashcard .hint {
+      color: #aebbd8;
+      font-size: .95rem
+    }
+
+    .btn {
+      border: 1px solid #3b496a;
+      background: #17223a;
+      color: #e8edff;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .18s
+    }
+
+    .btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: #8b7cff;
+      background: #222d4b
+    }
+
+    .btn.primary {
+      background: linear-gradient(110deg, #795bff, #438eea);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 8px 20px #5b4bc533
+    }
+
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px
+    }
+
+    .actions .right {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .topic-note {
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 17px 0 0
+    }
+
+    .question {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 850;
+      letter-spacing: -.03em;
+      margin: 15px 0 22px
+    }
+
+    #options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 17px 18px;
+      border: 1px solid #344260;
+      border-radius: 15px;
+      background: #111a2e;
+      color: #dce5ff;
+      font: inherit;
+      cursor: pointer;
+      transition: .18s
+    }
+
+    .option:hover {
+      border-color: #8d7bff;
+      background: #1a2340
+    }
+
+    .option.selected {
+      border-color: #9584ff;
+      background: #29234d
+    }
+
+    .option.correct {
+      border-color: #38cfa7;
+      background: #10372f
+    }
+
+    .option.wrong {
+      border-color: #ff718c;
+      background: #3b1e32
+    }
+
+    .feedback {
+      padding: 15px 17px;
+      border-radius: 14px;
+      background: #1a2741;
+      border: 1px solid #344260;
+      margin-top: 16px
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    footer,
+    .footer {
+      color: #8998b8;
+      text-align: center;
+      font-size: .82rem;
+      padding: 22px
+    }
+
+    button:focus-visible,
+    select:focus-visible {
+      outline: 3px solid #a99aff;
+      outline-offset: 3px
+    }
+
+    @media(max-width:800px) {
+      .atlas-card {
+        grid-column: span 3
+      }
+
+      .atlas-card.atlas-wide {
+        grid-column: span 3
+      }
+    }
+
+    @media(max-width:560px) {
+      .wrap {
+        width: min(100% - 22px, 1240px);
+        padding-top: 12px
+      }
+
+      .hero {
+        padding: 24px 20px;
+        border-radius: 23px
+      }
+
+      .toprow {
+        align-items: flex-start
+      }
+
+      .eyebrow {
+        font-size: .65rem
+      }
+
+      .stats {
+        gap: 8px
+      }
+
+      .stat {
+        padding: 14px 12px;
+        border-radius: 15px
+      }
+
+      .stat span {
+        font-size: .76rem
+      }
+
+      .tabs {
+        border-radius: 14px
+      }
+
+      .tab {
+        padding: 11px 13px;
+        font-size: .88rem
+      }
+
+      .visual-atlas {
+        display: block
+      }
+
+      .atlas-card,
+      .atlas-card.atlas-wide {
+        margin-bottom: 13px;
+        padding: 17px
+      }
+
+      .panel {
+        padding: 18px;
+        border-radius: 19px
+      }
+
+      #options {
+        grid-template-columns: 1fr
+      }
+
+      .actions .right {
+        width: 100%
+      }
+
+      .actions .btn {
+        flex: 1
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *:before,
+      *:after {
+        scroll-behavior: auto !important;
+        transition: none !important
+      }
+    }
+  </style>
+  <style>
+    .lab {
+      margin: 22px 0
+    }
+
+    .lab>h2 {
+      font-size: 1.5rem;
+      margin: 0 0 4px
+    }
+
+    .lab .gr {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 14px
+    }
+
+    .lab .c {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 17px;
+      min-width: 0
+    }
+
+    .lab .w {
+      grid-column: 1/-1
+    }
+
+    .lab h3 {
+      margin: 0 0 4px;
+      font-size: 1.1rem
+    }
+
+    .lab svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 8px 0
+    }
+
+    .hs {
+      cursor: pointer
+    }
+
+    .hs circle {
+      fill: var(--yellow);
+      stroke: #080d1b;
+      stroke-width: 2
+    }
+
+    .hs text {
+      font-size: 11px;
+      font-weight: 800;
+      fill: #080d1b;
+      pointer-events: none
+    }
+
+    .hs:hover circle,
+    .hs:focus circle,
+    .hs.on circle {
+      fill: #fff
+    }
+
+    .hs:focus {
+      outline: none
+    }
+
+    .info {
+      background: var(--mint);
+      border-radius: 12px;
+      padding: 12px 14px;
+      min-height: 76px
+    }
+
+    .info b {
+      color: var(--yellow)
+    }
+
+    .ca {
+      color: #9fe8d0;
+      font-weight: 800
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 10px 0
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--mint);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      min-height: 40px
+    }
+
+    .chip.on {
+      background: var(--green);
+      border-color: var(--green)
+    }
+
+    .rock {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 10px 0
+    }
+
+    .blob {
+      width: 76px;
+      height: 64px;
+      flex: none;
+      border-radius: 42% 58% 46% 54%/55% 45% 58% 42%;
+      border: 2px solid #fff3
+    }
+
+    .three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px
+    }
+
+    .three button {
+      border: 1px solid var(--line);
+      background: var(--mint);
+      color: var(--ink);
+      border-radius: 12px;
+      padding: 10px 4px;
+      font-weight: 750;
+      min-height: 48px
+    }
+
+    .three button:hover {
+      border-color: var(--yellow)
+    }
+
+    .lat {
+      width: 100%;
+      accent-color: var(--yellow);
+      margin: 4px 0
+    }
+
+    .traps {
+      margin: 0;
+      padding-left: 20px
+    }
+
+    .traps li {
+      margin: 7px 0
+    }
+
+    @media(max-width:700px) {
+      .lab .gr {
+        grid-template-columns: 1fr
+      }
+    }
+
+    :root {
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+  </style>
+  <style>
+    .sw {
+      position: relative
+    }
+
+    .pop {
+      position: absolute;
+      z-index: 5;
+      width: min(290px, 82%);
+      background: #fff7dc;
+      color: #1c2340;
+      border-radius: 14px;
+      padding: 14px 34px 14px 16px;
+      box-shadow: 0 12px 40px #000b;
+      animation: pp .2s
+    }
+
+    .pop b {
+      font-size: 1.12rem
+    }
+
+    .pop .ca {
+      color: #0b6b57
+    }
+
+    .pop .x {
+      position: absolute;
+      top: 4px;
+      right: 6px;
+      border: 0;
+      background: none;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #1c2340;
+      min-width: 36px;
+      min-height: 36px
+    }
+
+    .pop .tip {
+      margin-top: 9px;
+      padding: 8px 10px;
+      background: #ffe3a0;
+      border-radius: 9px;
+      font-size: .92rem
+    }
+
+    @keyframes pp {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(.95)
+      }
+    }
+
+    .hs circle {
+      r: 12
+    }
+
+    .wrap {
+      width: 80vw;
+      max-width: none
+    }
+
+    @media(max-width:900px) {
+      .wrap {
+        width: 94vw
+      }
+    }
+
+    body {
+      font-size: 1.08rem
+    }
+
+    :root {
+      --muted: #d3dcf2
+    }
+
+    .muted,
+    .topic-note,
+    .stat span,
+    .atlas-card p,
+    .atlas-card li,
+    .controls,
+    .flashcard .hint,
+    .panelhead .muted {
+      color: #d3dcf2
+    }
+
+    .footer,
+    footer {
+      color: #b8c4e0
+    }
+
+    .panel,
+    .atlas-card,
+    .lab .c {
+      background: #16213b;
+      border: 1px solid #4a5b86
+    }
+
+    .atlas-card svg {
+      background: #f4f1e6;
+      border-radius: 14px;
+      padding: 6px;
+      max-height: 320px
+    }
+
+    .flashcard {
+      background: #243066;
+      border: 2px solid #9a8cff;
+      color: #fff
+    }
+
+    .flashcard .main {
+      color: #fff;
+      font-size: clamp(1.8rem, 3.5vw, 3rem)
+    }
+
+    .flashcard .label {
+      color: #9ff3e6
+    }
+
+    .flashcard .hint {
+      color: #e0e7fa
+    }
+
+    .question {
+      color: #fff
+    }
+
+    .option {
+      background: #1e2a4a;
+      border: 2px solid #5a6c9a;
+      color: #fff
+    }
+
+    .option:hover:not(:disabled) {
+      background: #2b3a66;
+      border-color: #b3a6ff
+    }
+
+    .option.chosen {
+      background: #3a2f7a;
+      border-color: #b3a6ff;
+      color: #fff
+    }
+
+    .option.good {
+      background: #0f5a44;
+      border-color: #4ff0bf;
+      color: #fff
+    }
+
+    .option.bad {
+      background: #6b2140;
+      border-color: #ff8aa5;
+      color: #fff
+    }
+
+    .feedback {
+      background: #223256;
+      border: 1px solid #6b7fb0;
+      color: #fff;
+      font-size: 1.05rem
+    }
+
+    .btn {
+      background: #25335a;
+      border-color: #6b7fb0;
+      color: #fff
+    }
+
+    .btn.primary {
+      background: linear-gradient(110deg, #795bff, #438eea);
+      border-color: transparent
+    }
+
+    .tab {
+      color: #e4ebff
+    }
+
+    .tab.active {
+      color: #fff
+    }
+
+    .memory-hook {
+      background: #2b2763 !important;
+      color: #efeaff
+    }
+
+    .info {
+      background: #26356b;
+      color: #fff
+    }
+
+    .chip,
+    .three button {
+      background: #26356b;
+      color: #fff;
+      border-color: #5a6c9a
+    }
+
+    .review-item {
+      background: #1e2a4a;
+      color: #fff
+    }
+
+    .pill {
+      color: #fff
+    }
+
+    .lab svg g[font-size] text {
+      fill: #e4ebff
+    }
+
+    .option {
+      font-size: 1.12rem;
+      padding: 16px 18px;
+      border-radius: 14px
+    }
+
+    .option.bad {
+      animation: sk .35s
+    }
+
+    @keyframes sk {
+      25% {
+        transform: translateX(-6px)
+      }
+
+      75% {
+        transform: translateX(6px)
+      }
+    }
+
+    .tab {
+      font-size: 1.02rem
+    }
+
+    .question {
+      font-size: clamp(1.4rem, 4.5vw, 2rem)
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .option.bad {
+        animation: none
+      }
+    }
+  </style>
+</head>
+
 <body>
-<main class="wrap">
-<header class="hero">
-  <div class="toprow"><div class="eyebrow">✦ LABORATORIO DE CIENCIAS</div><div class="scorepill">⭐ <span id="score">0</span> puntos · <span id="rk">🧭 Explorador</span></div></div>
-  <h1>Misión<br>examen</h1>
-  <p>Aprende un poquito cada vez, juega al quiz y convierte los errores en aciertos. ¡Tú puedes!</p>
-</header>
-<section class="stats" aria-label="Tu progreso">
-  <div class="stat"><strong id="correct">0</strong><span>Respuestas correctas</span></div>
-  <div class="stat"><strong id="total">0</strong><span>Preguntas respondidas</span></div>
-  <div class="stat"><strong id="percent">—</strong><span>Porcentaje de aciertos</span></div>
-</section>
-<nav class="tabs" aria-label="Modo de estudio">
-  <button class="tab active" data-mode="learn">🧠 Tarjetas</button>
-  <button class="tab" data-mode="quiz">🎮 Quiz</button>
-  <button class="tab" data-mode="review">🔁 Repasar errores</button>
-</nav>
-<div class="controls"><label for="topic">Tema</label><select id="topic">
-<option value="all">Todos los temas</option><option value="geo">Dinámica geológica</option><option value="rocks">Minerales y rocas</option><option value="earth">La Tierra y sus capas</option><option value="climate">Climas y zonas climáticas</option>
-</select></div>
+  <main class="wrap">
+    <header class="hero">
+      <div class="toprow">
+        <div class="eyebrow">✦ LABORATORIO DE CIENCIAS</div>
+        <div class="scorepill">⭐ <span id="score">0</span> puntos · <span id="rk">🧭 Explorador</span></div>
+      </div>
+      <h1>Misión<br>examen</h1>
+      <p>Aprende un poquito cada vez, juega al quiz y convierte los errores en aciertos. ¡Tú puedes!</p>
+    </header>
+    <section class="stats" aria-label="Tu progreso">
+      <div class="stat"><strong id="correct">0</strong><span>Respuestas correctas</span></div>
+      <div class="stat"><strong id="total">0</strong><span>Preguntas respondidas</span></div>
+      <div class="stat"><strong id="percent">—</strong><span>Porcentaje de aciertos</span></div>
+    </section>
+    <nav class="tabs" aria-label="Modo de estudio">
+      <button class="tab active" data-mode="learn">🧠 Tarjetas</button>
+      <button class="tab" data-mode="quiz">🎮 Quiz</button>
+      <button class="tab" data-mode="review">🔁 Repasar errores</button>
+    </nav>
+    <div class="controls"><label for="topic">Tema</label><select id="topic">
+        <option value="all">Todos los temas</option>
+        <option value="geo">Dinámica geológica</option>
+        <option value="rocks">Minerales y rocas</option>
+        <option value="earth">La Tierra y sus capas</option>
+        <option value="climate">Climas y zonas climáticas</option>
+      </select></div>
 
-<section class="visual-atlas" aria-label="Atlas visual para comprender y recordar">
-  <article class="atlas-card">
-    <h2>🌍 1. La Tierra por dentro</h2>
-    <p>De fuera hacia dentro: corteza → manto → núcleo.</p>
-    <svg viewBox="0 0 340 220" role="img" aria-label="Corte de la Tierra con corteza, manto y núcleo">
-      <circle cx="115" cy="108" r="83" fill="#4b8c62"/>
-      <circle cx="115" cy="108" r="68" fill="#efb64f"/>
-      <circle cx="115" cy="108" r="43" fill="#e87843"/>
-      <circle cx="115" cy="108" r="23" fill="#f8df8a"/>
-      <path d="M115 25 A83 83 0 0 1 198 108 L183 108 A68 68 0 0 0 115 40 Z" fill="#2d6d9b"/>
-      <g font-size="12" font-weight="700" fill="#18352e">
-        <path d="M177 53 L226 35" stroke="#18352e" stroke-width="1.5"/><text x="230" y="34">Corteza</text>
-        <path d="M173 91 L226 83" stroke="#18352e" stroke-width="1.5"/><text x="230" y="82">Manto</text>
-        <path d="M153 122 L226 132" stroke="#18352e" stroke-width="1.5"/><text x="230" y="131">Núcleo</text>
-        <path d="M125 108 L226 177" stroke="#18352e" stroke-width="1.5"/><text x="230" y="180">Centro</text>
-      </g>
-    </svg>
-    <div class="memory-hook"><strong>Truco:</strong> piensa en un huevo: cáscara fina, clara gruesa y yema central.</div>
-  </article>
+    <section class="visual-atlas" aria-label="Atlas visual para comprender y recordar">
+      <article class="atlas-card">
+        <h2>🌍 1. La Tierra por dentro</h2>
+        <p>De fuera hacia dentro: corteza → manto → núcleo.</p>
+        <svg viewBox="0 0 340 220" role="img" aria-label="Corte de la Tierra con corteza, manto y núcleo">
+          <circle cx="115" cy="108" r="83" fill="#4b8c62" />
+          <circle cx="115" cy="108" r="68" fill="#efb64f" />
+          <circle cx="115" cy="108" r="43" fill="#e87843" />
+          <circle cx="115" cy="108" r="23" fill="#f8df8a" />
+          <path d="M115 25 A83 83 0 0 1 198 108 L183 108 A68 68 0 0 0 115 40 Z" fill="#2d6d9b" />
+          <g font-size="12" font-weight="700" fill="#18352e">
+            <path d="M177 53 L226 35" stroke="#18352e" stroke-width="1.5" /><text x="230" y="34">Corteza</text>
+            <path d="M173 91 L226 83" stroke="#18352e" stroke-width="1.5" /><text x="230" y="82">Manto</text>
+            <path d="M153 122 L226 132" stroke="#18352e" stroke-width="1.5" /><text x="230" y="131">Núcleo</text>
+            <path d="M125 108 L226 177" stroke="#18352e" stroke-width="1.5" /><text x="230" y="180">Centro</text>
+          </g>
+        </svg>
+        <div class="memory-hook"><strong>Truco:</strong> piensa en un huevo: cáscara fina, clara gruesa y yema central.
+        </div>
+      </article>
 
-  <article class="atlas-card">
-    <h2>🌋 2. Anatomía de un volcán</h2>
-    <p>El magma está dentro; al salir a la superficie se llama lava.</p>
-    <svg viewBox="0 0 340 220" role="img" aria-label="Esquema de volcán con cráter, chimenea y cámara magmática">
-      <path d="M20 180 L82 113 L118 75 L146 105 L171 55 L207 112 L255 145 L320 180 Z" fill="#9b8874" stroke="#67594d" stroke-width="2"/>
-      <path d="M128 95 L146 105 L171 55 L191 104 L177 112 L163 90 L149 120 Z" fill="#e85e36"/>
-      <path d="M154 176 L157 117 L169 94 L180 117 L184 176 Z" fill="#e85e36"/>
-      <ellipse cx="169" cy="177" rx="37" ry="18" fill="#ef8a40" stroke="#b94b2e" stroke-width="2"/>
-      <path d="M153 79 Q169 65 187 78" fill="none" stroke="#e85e36" stroke-width="5" stroke-linecap="round"/>
-      <g fill="#18352e" font-size="11" font-weight="700">
-        <text x="12" y="24">Cráter</text><path d="M49 28 L153 73" stroke="#18352e" stroke-width="1.3" fill="none"/>
-        <text x="221" y="48">Lava</text><path d="M236 52 L181 77" stroke="#18352e" stroke-width="1.3" fill="none"/>
-        <text x="216" y="105">Chimenea</text><path d="M218 109 L179 135" stroke="#18352e" stroke-width="1.3" fill="none"/>
-        <text x="209" y="197">Cámara magmática</text><path d="M207 190 L190 181" stroke="#18352e" stroke-width="1.3" fill="none"/>
-      </g>
-    </svg>
-    <div class="memory-hook"><strong>Cadena:</strong> magma (interior) → asciende por la chimenea → sale por el cráter → lava.</div>
-  </article>
+      <article class="atlas-card">
+        <h2>🌋 2. Anatomía de un volcán</h2>
+        <p>El magma está dentro; al salir a la superficie se llama lava.</p>
+        <svg viewBox="0 0 340 220" role="img" aria-label="Esquema de volcán con cráter, chimenea y cámara magmática">
+          <path d="M20 180 L82 113 L118 75 L146 105 L171 55 L207 112 L255 145 L320 180 Z" fill="#9b8874"
+            stroke="#67594d" stroke-width="2" />
+          <path d="M128 95 L146 105 L171 55 L191 104 L177 112 L163 90 L149 120 Z" fill="#e85e36" />
+          <path d="M154 176 L157 117 L169 94 L180 117 L184 176 Z" fill="#e85e36" />
+          <ellipse cx="169" cy="177" rx="37" ry="18" fill="#ef8a40" stroke="#b94b2e" stroke-width="2" />
+          <path d="M153 79 Q169 65 187 78" fill="none" stroke="#e85e36" stroke-width="5" stroke-linecap="round" />
+          <g fill="#18352e" font-size="11" font-weight="700">
+            <text x="12" y="24">Cráter</text>
+            <path d="M49 28 L153 73" stroke="#18352e" stroke-width="1.3" fill="none" />
+            <text x="221" y="48">Lava</text>
+            <path d="M236 52 L181 77" stroke="#18352e" stroke-width="1.3" fill="none" />
+            <text x="216" y="105">Chimenea</text>
+            <path d="M218 109 L179 135" stroke="#18352e" stroke-width="1.3" fill="none" />
+            <text x="209" y="197">Cámara magmática</text>
+            <path d="M207 190 L190 181" stroke="#18352e" stroke-width="1.3" fill="none" />
+          </g>
+        </svg>
+        <div class="memory-hook"><strong>Cadena:</strong> magma (interior) → asciende por la chimenea → sale por el
+          cráter → lava.</div>
+      </article>
 
-  <article class="atlas-card atlas-wide">
-    <h2>🪨 3. El ciclo de las rocas</h2>
-    <p>Una roca puede cambiar de tipo: no es una clasificación inmóvil.</p>
-    <svg viewBox="0 0 700 205" role="img" aria-label="Ciclo de las rocas con sedimentarias, magmáticas y metamórficas">
-      <defs><marker id="rockArrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#176b50"/></marker></defs>
-      <rect x="15" y="48" width="185" height="83" rx="15" fill="#e8d5b7" stroke="#b99b6d" stroke-width="2"/>
-      <rect x="258" y="48" width="185" height="83" rx="15" fill="#f9dfad" stroke="#d5a344" stroke-width="2"/>
-      <rect x="501" y="48" width="185" height="83" rx="15" fill="#d8e8f0" stroke="#76a8bf" stroke-width="2"/>
-      <g font-size="16" text-anchor="middle" fill="#18352e" font-weight="800">
-        <text x="107" y="78">Sedimentarias</text><text x="107" y="101" font-size="12" font-weight="500">sedimentos compactados</text>
-        <text x="350" y="78">Magmáticas</text><text x="350" y="101" font-size="12" font-weight="500">magma/lava se enfría</text>
-        <text x="593" y="78">Metamórficas</text><text x="593" y="101" font-size="12" font-weight="500">presión + temperatura</text>
-      </g>
-      <path d="M202 70 C222 30 238 30 257 70" fill="none" stroke="#176b50" stroke-width="2.5" marker-end="url(#rockArrow)"/>
-      <path d="M444 112 C465 157 481 157 500 112" fill="none" stroke="#176b50" stroke-width="2.5" marker-end="url(#rockArrow)"/>
-      <path d="M500 133 C390 192 202 192 107 134" fill="none" stroke="#176b50" stroke-width="2.5" marker-end="url(#rockArrow)"/>
-      <g font-size="11" fill="#176b50" font-weight="700" text-anchor="middle"><text x="230" y="24">enfriamiento</text><text x="472" y="170">presión y calor</text><text x="305" y="190">erosión · sedimentos · compactación</text></g>
-    </svg>
-    <div class="memory-hook"><strong>Reto de experto:</strong> explica qué proceso necesita cada tipo de roca y por qué una metamórfica no llega a fundirse completamente.</div>
-  </article>
+      <article class="atlas-card atlas-wide">
+        <h2>🪨 3. El ciclo de las rocas</h2>
+        <p>Una roca puede cambiar de tipo: no es una clasificación inmóvil.</p>
+        <svg viewBox="0 0 700 205" role="img"
+          aria-label="Ciclo de las rocas con sedimentarias, magmáticas y metamórficas">
+          <defs>
+            <marker id="rockArrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#176b50" />
+            </marker>
+          </defs>
+          <rect x="15" y="48" width="185" height="83" rx="15" fill="#e8d5b7" stroke="#b99b6d" stroke-width="2" />
+          <rect x="258" y="48" width="185" height="83" rx="15" fill="#f9dfad" stroke="#d5a344" stroke-width="2" />
+          <rect x="501" y="48" width="185" height="83" rx="15" fill="#d8e8f0" stroke="#76a8bf" stroke-width="2" />
+          <g font-size="16" text-anchor="middle" fill="#18352e" font-weight="800">
+            <text x="107" y="78">Sedimentarias</text><text x="107" y="101" font-size="12" font-weight="500">sedimentos
+              compactados</text>
+            <text x="350" y="78">Magmáticas</text><text x="350" y="101" font-size="12" font-weight="500">magma/lava se
+              enfría</text>
+            <text x="593" y="78">Metamórficas</text><text x="593" y="101" font-size="12" font-weight="500">presión +
+              temperatura</text>
+          </g>
+          <path d="M202 70 C222 30 238 30 257 70" fill="none" stroke="#176b50" stroke-width="2.5"
+            marker-end="url(#rockArrow)" />
+          <path d="M444 112 C465 157 481 157 500 112" fill="none" stroke="#176b50" stroke-width="2.5"
+            marker-end="url(#rockArrow)" />
+          <path d="M500 133 C390 192 202 192 107 134" fill="none" stroke="#176b50" stroke-width="2.5"
+            marker-end="url(#rockArrow)" />
+          <g font-size="11" fill="#176b50" font-weight="700" text-anchor="middle"><text x="230"
+              y="24">enfriamiento</text><text x="472" y="170">presión y calor</text><text x="305" y="190">erosión ·
+              sedimentos · compactación</text></g>
+        </svg>
+        <div class="memory-hook"><strong>Reto de experto:</strong> explica qué proceso necesita cada tipo de roca y por
+          qué una metamórfica no llega a fundirse completamente.</div>
+      </article>
 
-  <article class="atlas-card">
-    <h2>🌦️ 4. Tiempo atmosférico ≠ clima</h2>
-    <svg viewBox="0 0 340 155" role="img" aria-label="Comparación entre tiempo de hoy y clima de muchos años">
-      <rect x="7" y="12" width="151" height="124" rx="14" fill="#e8f4fa" stroke="#a8cfdf"/>
-      <rect x="182" y="12" width="151" height="124" rx="14" fill="#f9efd2" stroke="#e5d49b"/>
-      <circle cx="82" cy="55" r="20" fill="#ffd76b"/><path d="M60 70 Q50 50 69 46 Q81 25 98 47 Q117 47 112 68 Z" fill="#fff" stroke="#9bb3bc" stroke-width="2"/>
-      <g stroke="#4e9bc0" stroke-width="3" stroke-linecap="round"><path d="M68 78 l-5 10 M84 78 l-5 10 M100 78 l-5 10"/></g>
-      <g fill="#18352e" text-anchor="middle"><text x="82" y="111" font-size="14" font-weight="800">TIEMPO</text><text x="82" y="126" font-size="10">hoy / esta semana</text></g>
-      <circle cx="257" cy="53" r="18" fill="#ffd76b"/><path d="M212 77 Q250 91 300 75" fill="none" stroke="#4b8c62" stroke-width="4"/><path d="M212 89 Q250 103 300 87" fill="none" stroke="#4b8c62" stroke-width="4"/><path d="M212 101 Q250 115 300 99" fill="none" stroke="#4b8c62" stroke-width="4"/>
-      <g fill="#18352e" text-anchor="middle"><text x="257" y="122" font-size="14" font-weight="800">CLIMA</text><text x="257" y="134" font-size="10">patrón de muchos años</text></g>
-    </svg>
-    <div class="memory-hook"><strong>Pregunta clave:</strong> «¿Qué tiempo hace hoy?» es tiempo. «¿Qué suele pasar durante décadas?» es clima.</div>
-  </article>
+      <article class="atlas-card">
+        <h2>🌦️ 4. Tiempo atmosférico ≠ clima</h2>
+        <svg viewBox="0 0 340 155" role="img" aria-label="Comparación entre tiempo de hoy y clima de muchos años">
+          <rect x="7" y="12" width="151" height="124" rx="14" fill="#e8f4fa" stroke="#a8cfdf" />
+          <rect x="182" y="12" width="151" height="124" rx="14" fill="#f9efd2" stroke="#e5d49b" />
+          <circle cx="82" cy="55" r="20" fill="#ffd76b" />
+          <path d="M60 70 Q50 50 69 46 Q81 25 98 47 Q117 47 112 68 Z" fill="#fff" stroke="#9bb3bc" stroke-width="2" />
+          <g stroke="#4e9bc0" stroke-width="3" stroke-linecap="round">
+            <path d="M68 78 l-5 10 M84 78 l-5 10 M100 78 l-5 10" />
+          </g>
+          <g fill="#18352e" text-anchor="middle"><text x="82" y="111" font-size="14"
+              font-weight="800">TIEMPO</text><text x="82" y="126" font-size="10">hoy / esta semana</text></g>
+          <circle cx="257" cy="53" r="18" fill="#ffd76b" />
+          <path d="M212 77 Q250 91 300 75" fill="none" stroke="#4b8c62" stroke-width="4" />
+          <path d="M212 89 Q250 103 300 87" fill="none" stroke="#4b8c62" stroke-width="4" />
+          <path d="M212 101 Q250 115 300 99" fill="none" stroke="#4b8c62" stroke-width="4" />
+          <g fill="#18352e" text-anchor="middle"><text x="257" y="122" font-size="14"
+              font-weight="800">CLIMA</text><text x="257" y="134" font-size="10">patrón de muchos años</text></g>
+        </svg>
+        <div class="memory-hook"><strong>Pregunta clave:</strong> «¿Qué tiempo hace hoy?» es tiempo. «¿Qué suele pasar
+          durante décadas?» es clima.</div>
+      </article>
 
-  <article class="atlas-card">
-    <h2>🌎 5. Las zonas climáticas</h2>
-    <svg viewBox="0 0 340 155" role="img" aria-label="Globo con zona cálida, templadas y frías">
-      <circle cx="105" cy="77" r="66" fill="#d9eaf2" stroke="#467d98" stroke-width="2"/>
-      <clipPath id="globeClip"><circle cx="105" cy="77" r="64"/></clipPath>
-      <g clip-path="url(#globeClip)">
-        <rect x="38" y="12" width="134" height="30" fill="#9ac5df"/><rect x="38" y="42" width="134" height="24" fill="#a8d7a7"/><rect x="38" y="66" width="134" height="22" fill="#f6d56f"/><rect x="38" y="88" width="134" height="24" fill="#a8d7a7"/><rect x="38" y="112" width="134" height="30" fill="#9ac5df"/>
-        <ellipse cx="105" cy="77" rx="30" ry="66" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M40 77 H170 M44 49 Q105 62 166 49 M44 105 Q105 92 166 105" fill="none" stroke="#ffffff" stroke-width="2"/>
-      </g>
-      <g font-size="12" font-weight="700" fill="#18352e"><text x="194" y="30">❄️ Zonas frías</text><text x="194" y="55">🌿 Templadas</text><text x="194" y="80">☀️ Cálida</text><text x="194" y="105">🌿 Templada</text><text x="194" y="130">❄️ Zona fría</text></g>
-    </svg>
-    <div class="memory-hook"><strong>Regla:</strong> cálida alrededor del ecuador, templadas a ambos lados y frías cerca de los polos.</div>
-  </article>
-</section>
+      <article class="atlas-card">
+        <h2>🌎 5. Las zonas climáticas</h2>
+        <svg viewBox="0 0 340 155" role="img" aria-label="Globo con zona cálida, templadas y frías">
+          <circle cx="105" cy="77" r="66" fill="#d9eaf2" stroke="#467d98" stroke-width="2" />
+          <clipPath id="globeClip">
+            <circle cx="105" cy="77" r="64" />
+          </clipPath>
+          <g clip-path="url(#globeClip)">
+            <rect x="38" y="12" width="134" height="30" fill="#9ac5df" />
+            <rect x="38" y="42" width="134" height="24" fill="#a8d7a7" />
+            <rect x="38" y="66" width="134" height="22" fill="#f6d56f" />
+            <rect x="38" y="88" width="134" height="24" fill="#a8d7a7" />
+            <rect x="38" y="112" width="134" height="30" fill="#9ac5df" />
+            <ellipse cx="105" cy="77" rx="30" ry="66" fill="none" stroke="#ffffff" stroke-width="2" />
+            <path d="M40 77 H170 M44 49 Q105 62 166 49 M44 105 Q105 92 166 105" fill="none" stroke="#ffffff"
+              stroke-width="2" />
+          </g>
+          <g font-size="12" font-weight="700" fill="#18352e"><text x="194" y="30">❄️ Zonas frías</text><text x="194"
+              y="55">🌿 Templadas</text><text x="194" y="80">☀️ Cálida</text><text x="194" y="105">🌿
+              Templada</text><text x="194" y="130">❄️ Zona fría</text></g>
+        </svg>
+        <div class="memory-hook"><strong>Regla:</strong> cálida alrededor del ecuador, templadas a ambos lados y frías
+          cerca de los polos.</div>
+      </article>
+    </section>
 
-<section class="lab" aria-label="Laboratorio interactivo">
-<h2>🔬 Laboratorio interactivo</h2><p class="muted">Toca, mueve y adivina. Los nombres <span class="ca">en catalán</span> aparecen por si el examen es en català.</p>
-<div class="gr">
-<article class="c w"><h3>🌋 Volcán y terremoto: toca los puntos amarillos</h3>
-<div class="sw" id="sw"><svg viewBox="0 0 360 230" role="img" aria-label="Corte con un volcán y un terremoto submarino">
-<rect width="360" height="230" rx="10" fill="#0d1630"/><rect x="0" y="120" width="360" height="110" fill="#4a3b5c"/><rect x="0" y="150" width="360" height="30" fill="#5d4a6e" opacity=".7"/>
-<rect x="262" y="108" width="98" height="14" fill="#2d8fd0"/><rect x="262" y="122" width="98" height="108" fill="#3b2f4c"/>
-<path d="M95 120L162 54 175 62 188 54 255 120Z" fill="#8a6a52"/><rect x="171" y="62" width="8" height="128" fill="#ff7b3a"/><ellipse cx="175" cy="192" rx="48" ry="22" fill="#ff4d2a"/>
-<path d="M170 56Q150 80 138 118" stroke="#ffb02e" stroke-width="5" fill="none"/><path d="M168 48Q160 30 176 22Q188 34 182 48" fill="#8b8fa3" opacity=".6"/>
-<g stroke="#fff" fill="none" opacity=".5"><circle cx="310" cy="190" r="12"/><circle cx="310" cy="190" r="26"/><circle cx="310" cy="190" r="42"/></g><path d="M310 190V122" stroke="#fff" stroke-dasharray="4 3"/>
-<g id="hsg"></g></svg><div class="pop hidden" id="pop" role="dialog"></div></div>
-<div class="info" id="hsinfo" aria-live="polite">👆 Toca un punto para ver su nombre y su definición.</div>
-<div class="memory-hook" style="margin-top:10px;background:var(--mint);padding:10px 12px;border-radius:10px"><strong>Truco:</strong> <b>HIPO</b>centro = debajo (hipotermia, “por debajo”); <b>EPI</b>centro = encima (epidermis, la piel de arriba). Magma = dentro; lava = fuera.</div></article>
-<article class="c"><h3>🪨 ¿De qué grupo es esta roca?</h3><div class="rock"><div class="blob" id="rb"></div><div><b id="rn" style="font-size:1.3rem"></b><div class="ca" id="rc"></div></div></div>
-<div class="three"><button data-g="s">Sedimentària</button><button data-g="m">Magmàtica</button><button data-g="t">Metamòrfica</button></div>
-<div class="info" id="rf" style="margin-top:10px" aria-live="polite">Sedimentarias: se acumulan · Magmáticas: se enfría el magma · Metamórficas: se transforman.</div><p class="muted" id="rs" style="margin:8px 0 0"></p></article>
-<article class="c"><h3>🌡️ Sube por la latitud</h3>
-<svg viewBox="0 0 300 70" role="img" aria-label="Franja de latitud de 0 a 90 grados"><rect x="10" y="20" width="76" height="22" fill="#e8593c"/><rect x="86" y="20" width="136" height="22" fill="#4fb36a"/><rect x="222" y="20" width="68" height="22" fill="#9fd8ff"/><path id="mk" d="M10 14l-6-10h12z" fill="#ffd166"/>
-<g font-size="9" fill="#a7b4d2" text-anchor="middle"><text x="10" y="58">Ecuador</text><text x="86" y="58">T. Cáncer 23,5°</text><text x="222" y="58">C. polar 66,5°</text><text x="290" y="58">Polo</text></g></svg>
-<input class="lat" id="lat" type="range" min="0" max="90" value="10" aria-label="Latitud"><div class="info" id="li"></div></article>
-<article class="c w"><h3>🌎 Los 8 climas: elige uno</h3><div class="chips" id="cl"></div><div class="info" id="ci">Toca un clima.</div></article>
-<article class="c w"><h3>⚠️ Trampas típicas de examen</h3><ul class="traps">
-<li><b>Mineral ≠ roca.</b> Calcita = mineral; <span class="ca">calcària</span> = roca que contiene calcita. El granito es roca: cuarzo + feldespato + mica.</li>
-<li><b>Tiempo ≠ clima.</b> Tiempo = hoy, aquí (<span class="ca">temps atmosfèric</span>). Clima = lo habitual durante años.</li>
-<li><b>5 elementos del tiempo:</b> temperatura, humedad, viento, precipitaciones, presión (<span class="ca">temperatura, humitat, vent, precipitacions, pressió</span>).</li>
-<li><b>Capas de la atmósfera</b> (de abajo arriba): Tro-Estra-Meso-Termo-Exo. Truco: <i>“Todos Estudiamos Mucho Tras Exámenes”</i>.</li>
-<li><b>Árboles:</b> <span class="ca">faig</span> (haya) → oceánico · <span class="ca">alzina</span> (encina) → mediterráneo · <span class="ca">acàcia</span> → tropical (sabana).</li>
-<li><b>Hidrosfera</b> ≈ 70 % de la superficie. <b>Geosfera:</b> corteza, manto, núcleo.</li>
-<li><b>Contaminación del suelo:</b> llega al agua, baja la fertilidad, y pasa a los seres vivos por las cadenas alimentarias.</li></ul></article>
-</div></section>
-<script>(function(){const $=id=>document.getElementById(id);
-const H=[['hy',310,190,'1','Hipocentre','Hipocentro','Lugar del interior de la Tierra donde se produce el terremoto.'],['ep',310,122,'2','Epicentre','Epicentro','Punto de la superficie donde se nota más el terremoto (justo encima del hipocentro).'],['ts',340,100,'3','Tsunami','Tsunami','Olas gigantes que genera un sismo submarino (<span class="ca">sisme submarí</span>).'],['cr',175,50,'4','Cràter','Cráter','Abertura por la que salen los materiales volcánicos.'],['lv',148,95,'5','Lava','Lava','Magma líquido lanzado por el volcán.'],['co',226,100,'6','Con volcànic','Cono volcánico','Lava y otros materiales depositados fuera, que forman el cono.'],['xe',175,130,'7','Xemeneia','Chimenea','Grieta por la que sube el magma.'],['ma',175,192,'8','Magma','Cámara magmática','Roca fundida por las altas temperaturas del interior.']];
-$('hsg').innerHTML=H.map(h=>`<g class="hs" tabindex="0" role="button" data-k="${h[0]}" aria-label="${h[5]}"><circle cx="${h[1]}" cy="${h[2]}" r="10"/><text x="${h[1]}" y="${h[2]+4}" text-anchor="middle">${h[3]}</text></g>`).join('');
-const TP={hy:'HIPO = debajo. Es el origen del terremoto, dentro de la Tierra.',ep:'EPI = encima. Es el punto de la superficie donde más se nota.',ts:'Solo aparece si el sismo ocurre en el mar (sisme submarí).',cr:'Es la boca que está arriba del volcán.',lv:'Magma que sale = lava. Al enfriarse forma roca magmática.',co:'Lava y cenizas que se acumulan capa a capa fuera del volcán.',xe:'Es el camino del magma desde la cámara hasta el cráter.',ma:'Magma = dentro. Se forma cuando el calor funde las rocas.'};const pop=$('pop'),sw=$('sw');let cur=null;
-function closePop(){pop.classList.add('hidden');cur=null;document.querySelectorAll('.hs').forEach(x=>x.classList.remove('on'))}
-function hs(e){const g=e.target.closest('.hs');if(!g)return;const h=H.find(x=>x[0]===g.dataset.k);if(cur===h[0]){closePop();return}cur=h[0];document.querySelectorAll('.hs').forEach(x=>x.classList.toggle('on',x===g));$('hsinfo').innerHTML=`<b>${h[5]}</b> · <span class="ca">${h[4]}</span><br>${h[6]}`;pop.innerHTML=`<button class="x" aria-label="Cerrar">×</button><b>${h[3]}. ${h[5]}</b><br><span class="ca">${h[4]}</span><p style="margin:6px 0 0">${h[6]}</p><div class="tip">💡 ${TP[h[0]]}</div>`;pop.classList.remove('hidden');const W=sw.clientWidth,HH=sw.clientHeight,pw=pop.offsetWidth,ph=pop.offsetHeight;pop.style.left=Math.min(Math.max(h[1]/360*W-pw/2,4),W-pw-4)+'px';pop.style.top=(h[2]<115?h[2]/230*HH+18:Math.max(4,h[2]/230*HH-ph-18))+'px'}
-pop.addEventListener('click',e=>{if(e.target.closest('.x'))closePop()});document.addEventListener('click',e=>{if(cur&&!e.target.closest('.hs')&&!e.target.closest('#pop'))closePop()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closePop()});
-$('hsg').addEventListener('click',hs);$('hsg').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();hs(e)}});
-const R=[['Carbón','Carbó','s','#222','Orgánica: restos de seres vivos acumulados.'],['Conglomerado','Conglomerat','s','#b4673a','Trozos de otras rocas pegados.'],['Caliza','Calcària','s','#c9b458','Se forma por acumulación; contiene calcita.'],['Basalto','Basalt','m','#555','Lava enfriada.'],['Obsidiana','Obsidiana','m','#111','Cristal volcánico: lava que se solidifica.'],['Granito','Granit','m','#b9b9c4','Magma enfriado: cuarzo, feldespato y mica.'],['Pizarra','Pissarra','t','#3c4048','Otra roca transformada por presión y temperatura.'],['Mármol','Marbre','t','#cfd2d8','Se transforma desde la caliza.'],['Esquisto','Esquist','t','#c9733a','Transformada por presión y temperatura.']],GN={s:'sedimentaria',m:'magmática (ígnea)',t:'metamórfica'};let rq=[],rk=0,ok=0,tt=0;
-function nr(){if(!rq.length)rq=R.slice().sort(()=>Math.random()-.5);rk=rq.pop();$('rn').textContent=rk[0];$('rc').textContent=rk[1];$('rb').style.background=`radial-gradient(circle at 30% 30%,#fff5,${rk[3]})`}
-document.querySelectorAll('.three button').forEach(b=>b.onclick=()=>{const g=b.dataset.g;tt++;if(g===rk[2])ok++;$('rf').innerHTML=(g===rk[2]?'✅ ¡Sí! ':'❌ Era ')+'<b>'+(g===rk[2]?'':GN[rk[2]])+'</b> '+(g===rk[2]?GN[g]+'. ':'. ')+rk[4];$('rs').textContent='Aciertos: '+ok+' de '+tt;nr()});nr();
-function lat(){const v=+$('lat').value;$('mk').setAttribute('transform','translate('+(10+v/90*280)+',0)');const z=v<23.5?['Zona cálida','Calor todo el año.','Ecuatorial, tropical y desértico.']:v<66.5?['Zona templada','Cuatro estaciones con distintas temperaturas.','Mediterráneo, continental y oceánico.']:['Zona fría','Temperaturas muy bajas.','Polar (y alta montaña).'];$('li').innerHTML=`<b>${v}° → ${z[0]}</b> (<span class="ca">${z[0].replace('cálida','càlida')}</span>)<br>${z[1]}<br>Climas: ${z[2]}`}
-$('lat').oninput=lat;lat();
-const C=[['Equatorial','Cálido','Lluvias abundantes','Selva ecuatorial: muchísimas especies vegetales.'],['Tropical','Cálido','Estación seca + estación lluviosa','Sabana: baobab y acacia.'],['Desèrtic','Cálido','Casi sin lluvias','Desierto cálido: cactus.'],['Mediterrani','Templado','Verano caluroso y seco, invierno suave','Bosque mediterráneo: encina (alzina).'],['Continental','Templado','Inviernos fríos, veranos calurosos, pocas lluvias (sobre todo en otoño)','Bosque de coníferas: pinos y abetos.'],['Oceànic','Templado','Una estación seca y otra lluviosa','Bosque oceánico: roble (roure) y haya (faig).'],['Polar','Frío','Muy bajas temperaturas todo el año; poca precipitación, en forma de nieve','Desierto polar: hielo casi sin seres vivos.'],['Alta muntanya','Frío','Inviernos largos y fríos, veranos secos; abundantes precipitaciones','Paisaje de montaña: las especies cambian con la altitud.']];
-$('cl').innerHTML=C.map((c,i)=>`<button class="chip" data-i="${i}">${c[0]}</button>`).join('');
-$('cl').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));const c=C[b.dataset.i];$('ci').innerHTML=`<b>Clima ${c[0].toLowerCase()}</b> · ${c[1]}<br>🌦️ ${c[2]}<br>🌿 ${c[3]}`};
-})();</script>
-<section class="challenge-strip">
-  <h2>🧠 Desafío de pensamiento</h2>
-  <p>Sin mirar las tarjetas, conecta tres ideas: <strong>el interior de la Tierra</strong>, <strong>los volcanes</strong> y <strong>las rocas magmáticas</strong>. Después comprueba si puedes explicar la cadena completa en 30 segundos.</p>
-</section>
+    <section class="lab" aria-label="Laboratorio interactivo">
+      <h2>🔬 Laboratorio interactivo</h2>
+      <p class="muted">Toca, mueve y adivina. Los nombres <span class="ca">en catalán</span> aparecen por si el examen
+        es en català.</p>
+      <div class="gr">
+        <article class="c w">
+          <h3>🌋 Volcán y terremoto: toca los puntos amarillos</h3>
+          <div class="sw" id="sw"><svg viewBox="0 0 360 230" role="img"
+              aria-label="Corte con un volcán y un terremoto submarino">
+              <rect width="360" height="230" rx="10" fill="#0d1630" />
+              <rect x="0" y="120" width="360" height="110" fill="#4a3b5c" />
+              <rect x="0" y="150" width="360" height="30" fill="#5d4a6e" opacity=".7" />
+              <rect x="262" y="108" width="98" height="14" fill="#2d8fd0" />
+              <rect x="262" y="122" width="98" height="108" fill="#3b2f4c" />
+              <path d="M95 120L162 54 175 62 188 54 255 120Z" fill="#8a6a52" />
+              <rect x="171" y="62" width="8" height="128" fill="#ff7b3a" />
+              <ellipse cx="175" cy="192" rx="48" ry="22" fill="#ff4d2a" />
+              <path d="M170 56Q150 80 138 118" stroke="#ffb02e" stroke-width="5" fill="none" />
+              <path d="M168 48Q160 30 176 22Q188 34 182 48" fill="#8b8fa3" opacity=".6" />
+              <g stroke="#fff" fill="none" opacity=".5">
+                <circle cx="310" cy="190" r="12" />
+                <circle cx="310" cy="190" r="26" />
+                <circle cx="310" cy="190" r="42" />
+              </g>
+              <path d="M310 190V122" stroke="#fff" stroke-dasharray="4 3" />
+              <g id="hsg"></g>
+            </svg>
+            <div class="pop hidden" id="pop" role="dialog"></div>
+          </div>
+          <div class="info" id="hsinfo" aria-live="polite">👆 Toca un punto para ver su nombre y su definición.</div>
+          <div class="memory-hook" style="margin-top:10px;background:var(--mint);padding:10px 12px;border-radius:10px">
+            <strong>Truco:</strong> <b>HIPO</b>centro = debajo (hipotermia, “por debajo”); <b>EPI</b>centro = encima
+            (epidermis, la piel de arriba). Magma = dentro; lava = fuera.</div>
+        </article>
+        <article class="c">
+          <h3>🪨 ¿De qué grupo es esta roca?</h3>
+          <div class="rock">
+            <div class="blob" id="rb"></div>
+            <div><b id="rn" style="font-size:1.3rem"></b>
+              <div class="ca" id="rc"></div>
+            </div>
+          </div>
+          <div class="three"><button data-g="s">Sedimentària</button><button data-g="m">Magmàtica</button><button
+              data-g="t">Metamòrfica</button></div>
+          <div class="info" id="rf" style="margin-top:10px" aria-live="polite">Sedimentarias: se acumulan · Magmáticas:
+            se enfría el magma · Metamórficas: se transforman.</div>
+          <p class="muted" id="rs" style="margin:8px 0 0"></p>
+        </article>
+        <article class="c">
+          <h3>🌡️ Sube por la latitud</h3>
+          <svg viewBox="0 0 300 70" role="img" aria-label="Franja de latitud de 0 a 90 grados">
+            <rect x="10" y="20" width="76" height="22" fill="#e8593c" />
+            <rect x="86" y="20" width="136" height="22" fill="#4fb36a" />
+            <rect x="222" y="20" width="68" height="22" fill="#9fd8ff" />
+            <path id="mk" d="M10 14l-6-10h12z" fill="#ffd166" />
+            <g font-size="9" fill="#a7b4d2" text-anchor="middle"><text x="10" y="58">Ecuador</text><text x="86"
+                y="58">T. Cáncer 23,5°</text><text x="222" y="58">C. polar 66,5°</text><text x="290" y="58">Polo</text>
+            </g>
+          </svg>
+          <input class="lat" id="lat" type="range" min="0" max="90" value="10" aria-label="Latitud">
+          <div class="info" id="li"></div>
+        </article>
+        <article class="c w">
+          <h3>🌎 Los 8 climas: elige uno</h3>
+          <div class="chips" id="cl"></div>
+          <div class="info" id="ci">Toca un clima.</div>
+        </article>
+        <article class="c w">
+          <h3>⚠️ Trampas típicas de examen</h3>
+          <ul class="traps">
+            <li><b>Mineral ≠ roca.</b> Calcita = mineral; <span class="ca">calcària</span> = roca que contiene calcita.
+              El granito es roca: cuarzo + feldespato + mica.</li>
+            <li><b>Tiempo ≠ clima.</b> Tiempo = hoy, aquí (<span class="ca">temps atmosfèric</span>). Clima = lo
+              habitual durante años.</li>
+            <li><b>5 elementos del tiempo:</b> temperatura, humedad, viento, precipitaciones, presión (<span
+                class="ca">temperatura, humitat, vent, precipitacions, pressió</span>).</li>
+            <li><b>Capas de la atmósfera</b> (de abajo arriba): Tro-Estra-Meso-Termo-Exo. Truco: <i>“Todos Estudiamos
+                Mucho Tras Exámenes”</i>.</li>
+            <li><b>Árboles:</b> <span class="ca">faig</span> (haya) → oceánico · <span class="ca">alzina</span> (encina)
+              → mediterráneo · <span class="ca">acàcia</span> → tropical (sabana).</li>
+            <li><b>Hidrosfera</b> ≈ 70 % de la superficie. <b>Geosfera:</b> corteza, manto, núcleo.</li>
+            <li><b>Contaminación del suelo:</b> llega al agua, baja la fertilidad, y pasa a los seres vivos por las
+              cadenas alimentarias.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <script>(function () {
+        const $ = id => document.getElementById(id);
+        const H = [['hy', 310, 190, '1', 'Hipocentre', 'Hipocentro', 'Lugar del interior de la Tierra donde se produce el terremoto.'], ['ep', 310, 122, '2', 'Epicentre', 'Epicentro', 'Punto de la superficie donde se nota más el terremoto (justo encima del hipocentro).'], ['ts', 340, 100, '3', 'Tsunami', 'Tsunami', 'Olas gigantes que genera un sismo submarino (<span class="ca">sisme submarí</span>).'], ['cr', 175, 50, '4', 'Cràter', 'Cráter', 'Abertura por la que salen los materiales volcánicos.'], ['lv', 148, 95, '5', 'Lava', 'Lava', 'Magma líquido lanzado por el volcán.'], ['co', 226, 100, '6', 'Con volcànic', 'Cono volcánico', 'Lava y otros materiales depositados fuera, que forman el cono.'], ['xe', 175, 130, '7', 'Xemeneia', 'Chimenea', 'Grieta por la que sube el magma.'], ['ma', 175, 192, '8', 'Magma', 'Cámara magmática', 'Roca fundida por las altas temperaturas del interior.']];
+        $('hsg').innerHTML = H.map(h => `<g class="hs" tabindex="0" role="button" data-k="${h[0]}" aria-label="${h[5]}"><circle cx="${h[1]}" cy="${h[2]}" r="10"/><text x="${h[1]}" y="${h[2] + 4}" text-anchor="middle">${h[3]}</text></g>`).join('');
+        const TP = { hy: 'HIPO = debajo. Es el origen del terremoto, dentro de la Tierra.', ep: 'EPI = encima. Es el punto de la superficie donde más se nota.', ts: 'Solo aparece si el sismo ocurre en el mar (sisme submarí).', cr: 'Es la boca que está arriba del volcán.', lv: 'Magma que sale = lava. Al enfriarse forma roca magmática.', co: 'Lava y cenizas que se acumulan capa a capa fuera del volcán.', xe: 'Es el camino del magma desde la cámara hasta el cráter.', ma: 'Magma = dentro. Se forma cuando el calor funde las rocas.' }; const pop = $('pop'), sw = $('sw'); let cur = null;
+        function closePop() { pop.classList.add('hidden'); cur = null; document.querySelectorAll('.hs').forEach(x => x.classList.remove('on')) }
+        function hs(e) { const g = e.target.closest('.hs'); if (!g) return; const h = H.find(x => x[0] === g.dataset.k); if (cur === h[0]) { closePop(); return } cur = h[0]; document.querySelectorAll('.hs').forEach(x => x.classList.toggle('on', x === g)); $('hsinfo').innerHTML = `<b>${h[5]}</b> · <span class="ca">${h[4]}</span><br>${h[6]}`; pop.innerHTML = `<button class="x" aria-label="Cerrar">×</button><b>${h[3]}. ${h[5]}</b><br><span class="ca">${h[4]}</span><p style="margin:6px 0 0">${h[6]}</p><div class="tip">💡 ${TP[h[0]]}</div>`; pop.classList.remove('hidden'); const W = sw.clientWidth, HH = sw.clientHeight, pw = pop.offsetWidth, ph = pop.offsetHeight; pop.style.left = Math.min(Math.max(h[1] / 360 * W - pw / 2, 4), W - pw - 4) + 'px'; pop.style.top = (h[2] < 115 ? h[2] / 230 * HH + 18 : Math.max(4, h[2] / 230 * HH - ph - 18)) + 'px' }
+        pop.addEventListener('click', e => { if (e.target.closest('.x')) closePop() }); document.addEventListener('click', e => { if (cur && !e.target.closest('.hs') && !e.target.closest('#pop')) closePop() }); document.addEventListener('keydown', e => { if (e.key === 'Escape') closePop() });
+        $('hsg').addEventListener('click', hs); $('hsg').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hs(e) } });
+        const R = [['Carbón', 'Carbó', 's', '#222', 'Orgánica: restos de seres vivos acumulados.'], ['Conglomerado', 'Conglomerat', 's', '#b4673a', 'Trozos de otras rocas pegados.'], ['Caliza', 'Calcària', 's', '#c9b458', 'Se forma por acumulación; contiene calcita.'], ['Basalto', 'Basalt', 'm', '#555', 'Lava enfriada.'], ['Obsidiana', 'Obsidiana', 'm', '#111', 'Cristal volcánico: lava que se solidifica.'], ['Granito', 'Granit', 'm', '#b9b9c4', 'Magma enfriado: cuarzo, feldespato y mica.'], ['Pizarra', 'Pissarra', 't', '#3c4048', 'Otra roca transformada por presión y temperatura.'], ['Mármol', 'Marbre', 't', '#cfd2d8', 'Se transforma desde la caliza.'], ['Esquisto', 'Esquist', 't', '#c9733a', 'Transformada por presión y temperatura.']], GN = { s: 'sedimentaria', m: 'magmática (ígnea)', t: 'metamórfica' }; let rq = [], rk = 0, ok = 0, tt = 0;
+        function nr() { if (!rq.length) rq = R.slice().sort(() => Math.random() - .5); rk = rq.pop(); $('rn').textContent = rk[0]; $('rc').textContent = rk[1]; $('rb').style.background = `radial-gradient(circle at 30% 30%,#fff5,${rk[3]})` }
+        document.querySelectorAll('.three button').forEach(b => b.onclick = () => { const g = b.dataset.g; tt++; if (g === rk[2]) ok++; $('rf').innerHTML = (g === rk[2] ? '✅ ¡Sí! ' : '❌ Era ') + '<b>' + (g === rk[2] ? '' : GN[rk[2]]) + '</b> ' + (g === rk[2] ? GN[g] + '. ' : '. ') + rk[4]; $('rs').textContent = 'Aciertos: ' + ok + ' de ' + tt; nr() }); nr();
+        function lat() { const v = +$('lat').value; $('mk').setAttribute('transform', 'translate(' + (10 + v / 90 * 280) + ',0)'); const z = v < 23.5 ? ['Zona cálida', 'Calor todo el año.', 'Ecuatorial, tropical y desértico.'] : v < 66.5 ? ['Zona templada', 'Cuatro estaciones con distintas temperaturas.', 'Mediterráneo, continental y oceánico.'] : ['Zona fría', 'Temperaturas muy bajas.', 'Polar (y alta montaña).']; $('li').innerHTML = `<b>${v}° → ${z[0]}</b> (<span class="ca">${z[0].replace('cálida', 'càlida')}</span>)<br>${z[1]}<br>Climas: ${z[2]}` }
+        $('lat').oninput = lat; lat();
+        const C = [['Equatorial', 'Cálido', 'Lluvias abundantes', 'Selva ecuatorial: muchísimas especies vegetales.'], ['Tropical', 'Cálido', 'Estación seca + estación lluviosa', 'Sabana: baobab y acacia.'], ['Desèrtic', 'Cálido', 'Casi sin lluvias', 'Desierto cálido: cactus.'], ['Mediterrani', 'Templado', 'Verano caluroso y seco, invierno suave', 'Bosque mediterráneo: encina (alzina).'], ['Continental', 'Templado', 'Inviernos fríos, veranos calurosos, pocas lluvias (sobre todo en otoño)', 'Bosque de coníferas: pinos y abetos.'], ['Oceànic', 'Templado', 'Una estación seca y otra lluviosa', 'Bosque oceánico: roble (roure) y haya (faig).'], ['Polar', 'Frío', 'Muy bajas temperaturas todo el año; poca precipitación, en forma de nieve', 'Desierto polar: hielo casi sin seres vivos.'], ['Alta muntanya', 'Frío', 'Inviernos largos y fríos, veranos secos; abundantes precipitaciones', 'Paisaje de montaña: las especies cambian con la altitud.']];
+        $('cl').innerHTML = C.map((c, i) => `<button class="chip" data-i="${i}">${c[0]}</button>`).join('');
+        $('cl').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; document.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b)); const c = C[b.dataset.i]; $('ci').innerHTML = `<b>Clima ${c[0].toLowerCase()}</b> · ${c[1]}<br>🌦️ ${c[2]}<br>🌿 ${c[3]}` };
+      })();</script>
+    <section class="challenge-strip">
+      <h2>🧠 Desafío de pensamiento</h2>
+      <p>Sin mirar las tarjetas, conecta tres ideas: <strong>el interior de la Tierra</strong>, <strong>los
+          volcanes</strong> y <strong>las rocas magmáticas</strong>. Después comprueba si puedes explicar la cadena
+        completa en 30 segundos.</p>
+    </section>
 
-<section class="panel" id="learn">
- <div class="panelhead"><span class="pill" id="card-count">Tarjeta 1</span><span class="muted">Piensa antes de girar</span></div>
- <button class="flashcard" id="flashcard" aria-live="polite"><span class="label" id="face-label">PREGUNTA</span><span class="main" id="face-main">¿Qué es un terremoto?</span><span class="hint" id="face-hint">Toca la tarjeta para ver la respuesta</span></button>
- <div class="actions"><button class="btn" id="prev">← Anterior</button><div class="right"><button class="btn" id="shuffle">🔀 Mezclar</button><button class="btn primary" id="next">Siguiente →</button></div></div>
- <p class="topic-note">Truco de estudio: intenta explicar la respuesta en voz alta con tus propias palabras.</p>
-</section>
-<section class="panel hidden" id="quiz">
- <div class="panelhead"><span class="pill" id="q-count">Pregunta 1</span><span class="muted" id="streak">Racha: 0 🔥</span></div>
- <div class="question" id="question"></div><div id="options"></div><div id="feedback" class="feedback hidden" aria-live="polite"></div>
- <div class="actions"><button class="btn primary" id="check" disabled>Comprobar</button><button class="btn hidden" id="next-q">Siguiente pregunta →</button></div>
-</section>
-<section class="panel hidden" id="review">
- <div class="question">🔁 Tus preguntas para reforzar</div><p class="muted">Aquí aparecen las preguntas que has fallado en el quiz. ¡Cada intento cuenta!</p>
- <div id="review-list"></div><div class="actions"><button class="btn primary" id="review-quiz">Practicar errores</button></div>
-</section>
-<div class="progress" aria-label="Progreso de la ronda"><span id="progress"></span></div>
-<p class="topic-note" id="motivation" aria-live="polite">Empieza con las tarjetas y después prueba el quiz.</p>
-<div class="actions"><button class="btn" id="reset">Reiniciar puntuación</button></div>
-<footer class="footer">Hecho para estudiar jugando · Puedes abrir esta web en ordenador, móvil o tablet.</footer>
-</main>
-<script>
-(function(){
-const cards=[
-{t:'geo',q:'¿Qué es un terremoto?',a:'Es una sacudida del terreno causada por la liberación repentina de energía en el interior de la Tierra.'},
-{t:'geo',q:'¿Qué es un volcán?',a:'Es una abertura de la corteza terrestre por la que pueden salir magma, gases y materiales volcánicos.'},
-{t:'geo',q:'¿Qué diferencia hay entre magma y lava?',a:'El magma es roca fundida en el interior de la Tierra. Cuando sale a la superficie, se llama lava.'},
-{t:'geo',q:'¿Qué es un cráter?',a:'Es la abertura situada en la parte superior del volcán, por donde pueden salir materiales.'},
-{t:'geo',q:'¿Qué es la contaminación del suelo?',a:'Es la alteración del suelo por sustancias o residuos contaminantes que pueden perjudicar a los seres vivos y los ecosistemas.'},
-{t:'rocks',q:'¿Qué es un mineral?',a:'Es una sustancia natural, generalmente sólida, con una composición química y unas características propias.'},
-{t:'rocks',q:'¿Qué es una roca?',a:'Es un material natural formado por uno o varios minerales.'},
-{t:'rocks',q:'¿Cuáles son los tres grandes tipos de rocas?',a:'Sedimentarias, magmáticas o ígneas, y metamórficas.'},
-{t:'rocks',q:'¿Cómo se forman las rocas sedimentarias?',a:'Por acumulación y compactación de sedimentos; algunas se forman por precipitación de sustancias disueltas.'},
-{t:'rocks',q:'¿Cómo se forman las rocas magmáticas?',a:'Cuando el magma o la lava se enfrían y se solidifican.'},
-{t:'rocks',q:'¿Cómo se forman las rocas metamórficas?',a:'Cuando otras rocas se transforman por la presión y la temperatura, sin llegar a fundirse completamente.'},
-{t:'rocks',q:'¿Qué diferencia hay entre el carbón y el granito?',a:'El carbón es una roca sedimentaria de origen orgánico; el granito es una roca magmática.'},
-{t:'earth',q:'¿Cuáles son las grandes partes de la Tierra?',a:'La geosfera, la atmósfera, la hidrosfera y la biosfera.'},
-{t:'earth',q:'¿Qué es la geosfera?',a:'Es la parte sólida de la Tierra. Incluye la corteza, el manto y el núcleo.'},
-{t:'earth',q:'¿Cuáles son las capas principales de la geosfera?',a:'La corteza, el manto y el núcleo.'},
-{t:'earth',q:'¿Qué es la atmósfera?',a:'Es la capa de gases que rodea la Tierra.'},
-{t:'earth',q:'¿Qué es la hidrosfera?',a:'Es el conjunto del agua de la Tierra.'},
-{t:'earth',q:'¿Qué es la biosfera?',a:'Es el conjunto de los seres vivos y los lugares de la Tierra donde hay vida.'},
-{t:'earth',q:'¿Qué es la troposfera?',a:'Es la capa más baja de la atmósfera, donde se producen los fenómenos meteorológicos.'},
-{t:'climate',q:'¿Qué diferencia hay entre tiempo atmosférico y clima?',a:'El tiempo describe las condiciones de la atmósfera en un lugar y momento; el clima es el patrón habitual durante muchos años.'},
-{t:'climate',q:'¿Qué elementos se usan para describir un clima?',a:'Entre otros, la temperatura y las precipitaciones.'},
-{t:'climate',q:'¿Cuáles son las grandes zonas climáticas de la Tierra?',a:'La zona cálida, las zonas templadas y las zonas frías.'},
-{t:'climate',q:'¿Dónde se sitúa la zona cálida?',a:'Alrededor del ecuador, entre los trópicos de Cáncer y Capricornio.'},
-{t:'climate',q:'¿Qué zonas hay en cada hemisferio fuera de la zona cálida?',a:'Una zona templada y una zona fría en cada hemisferio.'},
-{t:'climate',q:'¿Qué característica general tienen los climas polares?',a:'Temperaturas muy bajas durante gran parte o todo el año.'},
-{t:'climate',q:'¿Qué característica general tienen los climas desérticos?',a:'Precipitaciones muy escasas.'},
-{t:'climate',q:'¿Qué es un climograma?',a:'Un gráfico que representa las temperaturas y las precipitaciones de un lugar a lo largo de los meses.'},
-{t:'climate',q:'¿Por qué la vegetación varía según el clima?',a:'Porque las plantas necesitan determinadas condiciones de temperatura y disponibilidad de agua.'}
-];
-const questions=[
-{t:'geo',q:'¿Cómo se llama el magma cuando llega a la superficie?',o:['Lava','Granito','Humus'],a:0,e:'El magma que llega a la superficie se llama lava.'},
-{t:'geo',q:'¿Qué fenómeno provoca sacudidas del terreno?',o:['Una precipitación','Un terremoto','La fotosíntesis'],a:1,e:'Los terremotos provocan sacudidas del terreno.'},
-{t:'geo',q:'¿Qué puede salir de un volcán?',o:['Magma y gases','Solo agua dulce','Solo sedimentos'],a:0,e:'Los volcanes pueden expulsar lava, gases y otros materiales.'},
-{t:'rocks',q:'¿Cuál de estas rocas es magmática?',o:['Granito','Carbón','Caliza'],a:0,e:'El granito es una roca magmática.'},
-{t:'rocks',q:'¿Qué roca se forma por presión y temperatura?',o:['Sedimentaria','Metamórfica','Un gas'],a:1,e:'Las rocas metamórficas cambian por la presión y la temperatura.'},
-{t:'rocks',q:'¿Cuál de estos es un mineral?',o:['Calcita','Conglomerado','Basalto'],a:0,e:'La calcita es un mineral; el conglomerado y el basalto son rocas.'},
-{t:'rocks',q:'¿Qué ocurre cuando el material fundido se solidifica?',o:['Se forma una roca magmática','Siempre una roca metamórfica','Se convierte en gas'],a:0,e:'Las rocas magmáticas proceden del enfriamiento y solidificación del magma o la lava.'},
-{t:'earth',q:'¿Cuál es la capa más externa de la geosfera?',o:['El núcleo','La corteza','El manto'],a:1,e:'La geosfera se divide en corteza, manto y núcleo.'},
-{t:'earth',q:'¿Qué parte de la Tierra reúne el agua?',o:['Hidrosfera','Biosfera','Núcleo'],a:0,e:'La hidrosfera comprende el agua de la Tierra.'},
-{t:'earth',q:'¿Dónde se producen los fenómenos meteorológicos?',o:['En la troposfera','En el núcleo','En la corteza'],a:0,e:'La mayor parte de los fenómenos meteorológicos ocurren en la troposfera.'},
-{t:'earth',q:'¿Qué parte de la Tierra está formada por gases?',o:['Atmósfera','Geosfera','Hidrosfera'],a:0,e:'La atmósfera es la capa gaseosa que rodea la Tierra.'},
-{t:'climate',q:'¿Qué describe el clima?',o:['El tiempo de un solo minuto','Las condiciones habituales durante muchos años','Solo la temperatura de hoy'],a:1,e:'El clima describe patrones observados durante muchos años.'},
-{t:'climate',q:'¿Qué zona se encuentra entre los dos trópicos?',o:['La zona cálida','La zona polar','Las zonas frías'],a:0,e:'La zona cálida se sitúa entre los trópicos de Cáncer y Capricornio.'},
-{t:'climate',q:'¿Qué indica la cantidad de lluvia?',o:['Las precipitaciones','El núcleo','La biosfera'],a:0,e:'Las precipitaciones incluyen la lluvia y otras formas de agua que caen de la atmósfera.'},
-{t:'climate',q:'¿Qué clima suele tener muy pocas precipitaciones?',o:['Desértico','Polar siempre húmedo','Ecuatorial siempre seco'],a:0,e:'Una característica del clima desértico es la escasez de precipitaciones.'},
-{t:'climate',q:'¿Por qué no crecen las mismas plantas en todas partes?',o:['Varían el clima y el agua disponible','Todas las plantas necesitan lo mismo','Todas las rocas son iguales'],a:0,e:'La temperatura y la disponibilidad de agua influyen en la vegetación.'},
-{t:'geo',q:'¿Qué puede expulsar una erupción volcánica?',o:['Lava y cenizas','Solo nubes de lluvia','La atmósfera entera'],a:0,e:'Las erupciones pueden expulsar lava, cenizas y gases.'},
-{t:'rocks',q:'Una roca formada a partir de sedimentos suele ser...',o:['Sedimentaria','Metamórfica','Un gas'],a:0,e:'Las rocas sedimentarias se forman a partir de sedimentos o por precipitación de sustancias.'}
-];
-let mode='learn',topic='all',deck=[],idx=0,flipped=false,score=0,correct=0,total=0,streak=0,missed=[],qdeck=[],qi=0,selected=null,answered=false,round=[];
-const $=id=>document.getElementById(id),filter=a=>a.filter(x=>topic==='all'||x.t===topic);
-function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function sh(q){const p=shuffle(q.o.map((_,i)=>i));return Object.assign({},q,{o:p.map(i=>q.o[i]),a:p.indexOf(q.a)})}
-function rank(p){return p>=300?'🏆 Maestro de la Tierra':p>=150?'🔬 Científico':p>=60?'⛏️ Geólogo':'🧭 Explorador'}
-function stars(r){return r>=.9?'⭐⭐⭐':r>=.6?'⭐⭐☆':'⭐☆☆'}
-function boom(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<16;i++){const e=document.createElement('span');e.textContent=['⭐','✨','🎉','🌋','💎'][i%5];e.style.cssText='position:fixed;left:'+(30+Math.random()*40)+'vw;top:55vh;font-size:1.6rem;pointer-events:none;z-index:9';document.body.appendChild(e);e.animate([{transform:'translate(0,0)',opacity:1},{transform:'translate('+(Math.random()*240-120)+'px,'+(-120-Math.random()*160)+'px) rotate('+(Math.random()*360)+'deg)',opacity:0}],{duration:1100,easing:'ease-out'}).onfinish=()=>e.remove()}}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function stats(){$('score').textContent=score;$('rk').textContent=rank(score);$('correct').textContent=correct;$('total').textContent=total;$('percent').textContent=total?Math.round(correct/total*100)+'%':'—';$('motivation').textContent=!total?'Empieza con las tarjetas y después prueba el quiz.':correct===total?'¡Increíble! Has acertado todas las preguntas que has contestado.':correct/total>=.8?'¡Muy bien! Sigue practicando para afianzar lo aprendido.':'Cada error te ayuda a aprender. Repasa y vuelve a intentarlo.';$('review-list').innerHTML=missed.length?missed.slice(-10).map(m=>'<div class="review-item"><strong>'+esc(m.q)+'</strong><div class="muted">'+esc(m.e)+'</div></div>').join(''):'<p class="muted">Todavía no hay errores guardados. ¡Haz un quiz para empezar!</p>'}
-function makeDeck(){deck=shuffle(filter(cards));idx=0;flipped=false;renderCard()}
-function renderCard(){if(!deck.length){$('face-main').textContent='No hay tarjetas para este tema';return}$('card-count').textContent='Tarjeta '+(idx+1)+' de '+deck.length;$('face-label').textContent=flipped?'RESPUESTA':'PREGUNTA';$('face-main').textContent=flipped?deck[idx].a:deck[idx].q;$('face-hint').textContent=flipped?'Intenta explicarlo con tus propias palabras':'Toca la tarjeta para ver la respuesta';$('progress').style.width=((idx+1)/deck.length*100)+'%'}
-function setMode(m){mode=m;['learn','quiz','review'].forEach(x=>$(x).classList.toggle('hidden',x!==m));document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));if(m==='learn')renderCard();if(m==='quiz'&&(!qdeck.length||qi>=qdeck.length))startQuiz();if(m==='review')stats()}
-function startQuiz(source){qdeck=shuffle(source||filter(questions)).slice(0,10).map(sh);qi=0;round=[];$('check').classList.remove('hidden');renderQ()}
-function renderQ(){if(!qdeck.length){$('question').textContent='No hay preguntas para este tema.';$('options').innerHTML='';$('check').disabled=true;return}if(qi>=qdeck.length){$('q-count').textContent='Ronda completada';$('question').textContent='🎉 ¡Has terminado la ronda!';$('options').innerHTML='<p class="muted">'+stars(round.filter(x=>x.ok).length/round.length)+' Resultado: '+round.filter(x=>x.ok).length+' de '+round.length+' aciertos. Puedes repetir la ronda o repasar los errores.</p>';$('feedback').classList.add('hidden');$('check').classList.add('hidden');$('next-q').classList.remove('hidden');$('next-q').textContent='Nueva ronda';$('next-q').onclick=()=>startQuiz();$('progress').style.width='100%';return}selected=null;answered=false;const q=qdeck[qi];$('q-count').textContent='Pregunta '+(qi+1)+' de '+qdeck.length;$('streak').textContent='Racha: '+streak+' 🔥';$('question').textContent=q.q;$('feedback').classList.add('hidden');$('options').innerHTML=q.o.map((v,i)=>'<button class="option" type="button" data-i="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(v)+'</button>').join('');$('options').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{if(answered)return;selected=+b.dataset.i;$('options').querySelectorAll('button').forEach(x=>x.classList.remove('chosen'));b.classList.add('chosen');$('check').disabled=false;$('check').click()}));$('check').disabled=true;$('check').classList.remove('hidden');$('next-q').classList.add('hidden');$('next-q').onclick=()=>{qi++;renderQ()};$('progress').style.width=(qi/qdeck.length*100)+'%'}
-$('flashcard').addEventListener('click',()=>{flipped=!flipped;renderCard()});$('prev').addEventListener('click',()=>{idx=(idx-1+deck.length)%deck.length;flipped=false;renderCard()});$('next').addEventListener('click',()=>{idx=(idx+1)%deck.length;flipped=false;renderCard()});$('shuffle').addEventListener('click',makeDeck);document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));$('topic').addEventListener('change',e=>{topic=e.target.value;makeDeck();if(mode==='quiz')startQuiz();stats()});
-$('check').addEventListener('click',()=>{if(selected===null||answered)return;answered=true;const q=qdeck[qi],ok=selected===q.a;total++;if(ok){correct++;score+=10;streak++}else{streak=0;missed.push(q)}round.push({q:q.q,ok});$('options').querySelectorAll('button').forEach((b,i)=>{b.disabled=true;if(i===q.a)b.classList.add('good');if(i===selected&&!ok)b.classList.add('bad')});$('feedback').textContent=(ok?(boom(),(streak>=3?'🔥 ¡Racha de '+streak+'! ':'✅ ¡Correcto! '))+'+10 puntos. ':'🤔 ¡Casi! Era «'+q.o[q.a]+'». ')+q.e;$('feedback').classList.remove('hidden');$('check').classList.add('hidden');$('next-q').classList.remove('hidden');$('next-q').textContent=qi===qdeck.length-1?'Ver resultado →':'Siguiente pregunta →';stats()});
-$('review-quiz').addEventListener('click',()=>{const deckMissed=missed.map(m=>questions.find(q=>q.q===m.q)).filter(Boolean);if(deckMissed.length){setMode('quiz');startQuiz(deckMissed)}else{$('review-list').innerHTML='<p class="muted">Primero haz un quiz para guardar preguntas que quieras repasar.</p>'}});
-$('reset').addEventListener('click',()=>{score=correct=total=streak=0;missed=[];stats();makeDeck();if(mode==='quiz')startQuiz()});makeDeck();stats();
-})();
-</script>
+    <section class="panel" id="learn">
+      <div class="panelhead"><span class="pill" id="card-count">Tarjeta 1</span><span class="muted">Piensa antes de
+          girar</span></div>
+      <button class="flashcard" id="flashcard" aria-live="polite"><span class="label"
+          id="face-label">PREGUNTA</span><span class="main" id="face-main">¿Qué es un terremoto?</span><span
+          class="hint" id="face-hint">Toca la tarjeta para ver la respuesta</span></button>
+      <div class="actions"><button class="btn" id="prev">← Anterior</button>
+        <div class="right"><button class="btn" id="shuffle">🔀 Mezclar</button><button class="btn primary"
+            id="next">Siguiente →</button></div>
+      </div>
+      <p class="topic-note">Truco de estudio: intenta explicar la respuesta en voz alta con tus propias palabras.</p>
+    </section>
+    <section class="panel hidden" id="quiz">
+      <div class="panelhead"><span class="pill" id="q-count">Pregunta 1</span><span class="muted" id="streak">Racha: 0
+          🔥</span></div>
+      <div class="question" id="question"></div>
+      <div id="options"></div>
+      <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+      <div class="actions"><button class="btn primary" id="check" disabled>Comprobar</button><button class="btn hidden"
+          id="next-q">Siguiente pregunta →</button></div>
+    </section>
+    <section class="panel hidden" id="review">
+      <div class="question">🔁 Tus preguntas para reforzar</div>
+      <p class="muted">Aquí aparecen las preguntas que has fallado en el quiz. ¡Cada intento cuenta!</p>
+      <div id="review-list"></div>
+      <div class="actions"><button class="btn primary" id="review-quiz">Practicar errores</button></div>
+    </section>
+    <div class="progress" aria-label="Progreso de la ronda"><span id="progress"></span></div>
+    <p class="topic-note" id="motivation" aria-live="polite">Empieza con las tarjetas y después prueba el quiz.</p>
+    <div class="actions"><button class="btn" id="reset">Reiniciar puntuación</button></div>
+    <footer class="footer">Hecho para estudiar jugando · Puedes abrir esta web en ordenador, móvil o tablet.</footer>
+  </main>
+  <script>
+    (function () {
+      const cards = [
+        { t: 'geo', q: '¿Qué es un terremoto?', a: 'Es una sacudida del terreno causada por la liberación repentina de energía en el interior de la Tierra.' },
+        { t: 'geo', q: '¿Qué es un volcán?', a: 'Es una abertura de la corteza terrestre por la que pueden salir magma, gases y materiales volcánicos.' },
+        { t: 'geo', q: '¿Qué diferencia hay entre magma y lava?', a: 'El magma es roca fundida en el interior de la Tierra. Cuando sale a la superficie, se llama lava.' },
+        { t: 'geo', q: '¿Qué es un cráter?', a: 'Es la abertura situada en la parte superior del volcán, por donde pueden salir materiales.' },
+        { t: 'geo', q: '¿Qué es la contaminación del suelo?', a: 'Es la alteración del suelo por sustancias o residuos contaminantes que pueden perjudicar a los seres vivos y los ecosistemas.' },
+        { t: 'rocks', q: '¿Qué es un mineral?', a: 'Es una sustancia natural, generalmente sólida, con una composición química y unas características propias.' },
+        { t: 'rocks', q: '¿Qué es una roca?', a: 'Es un material natural formado por uno o varios minerales.' },
+        { t: 'rocks', q: '¿Cuáles son los tres grandes tipos de rocas?', a: 'Sedimentarias, magmáticas o ígneas, y metamórficas.' },
+        { t: 'rocks', q: '¿Cómo se forman las rocas sedimentarias?', a: 'Por acumulación y compactación de sedimentos; algunas se forman por precipitación de sustancias disueltas.' },
+        { t: 'rocks', q: '¿Cómo se forman las rocas magmáticas?', a: 'Cuando el magma o la lava se enfrían y se solidifican.' },
+        { t: 'rocks', q: '¿Cómo se forman las rocas metamórficas?', a: 'Cuando otras rocas se transforman por la presión y la temperatura, sin llegar a fundirse completamente.' },
+        { t: 'rocks', q: '¿Qué diferencia hay entre el carbón y el granito?', a: 'El carbón es una roca sedimentaria de origen orgánico; el granito es una roca magmática.' },
+        { t: 'earth', q: '¿Cuáles son las grandes partes de la Tierra?', a: 'La geosfera, la atmósfera, la hidrosfera y la biosfera.' },
+        { t: 'earth', q: '¿Qué es la geosfera?', a: 'Es la parte sólida de la Tierra. Incluye la corteza, el manto y el núcleo.' },
+        { t: 'earth', q: '¿Cuáles son las capas principales de la geosfera?', a: 'La corteza, el manto y el núcleo.' },
+        { t: 'earth', q: '¿Qué es la atmósfera?', a: 'Es la capa de gases que rodea la Tierra.' },
+        { t: 'earth', q: '¿Qué es la hidrosfera?', a: 'Es el conjunto del agua de la Tierra.' },
+        { t: 'earth', q: '¿Qué es la biosfera?', a: 'Es el conjunto de los seres vivos y los lugares de la Tierra donde hay vida.' },
+        { t: 'earth', q: '¿Qué es la troposfera?', a: 'Es la capa más baja de la atmósfera, donde se producen los fenómenos meteorológicos.' },
+        { t: 'climate', q: '¿Qué diferencia hay entre tiempo atmosférico y clima?', a: 'El tiempo describe las condiciones de la atmósfera en un lugar y momento; el clima es el patrón habitual durante muchos años.' },
+        { t: 'climate', q: '¿Qué elementos se usan para describir un clima?', a: 'Entre otros, la temperatura y las precipitaciones.' },
+        { t: 'climate', q: '¿Cuáles son las grandes zonas climáticas de la Tierra?', a: 'La zona cálida, las zonas templadas y las zonas frías.' },
+        { t: 'climate', q: '¿Dónde se sitúa la zona cálida?', a: 'Alrededor del ecuador, entre los trópicos de Cáncer y Capricornio.' },
+        { t: 'climate', q: '¿Qué zonas hay en cada hemisferio fuera de la zona cálida?', a: 'Una zona templada y una zona fría en cada hemisferio.' },
+        { t: 'climate', q: '¿Qué característica general tienen los climas polares?', a: 'Temperaturas muy bajas durante gran parte o todo el año.' },
+        { t: 'climate', q: '¿Qué característica general tienen los climas desérticos?', a: 'Precipitaciones muy escasas.' },
+        { t: 'climate', q: '¿Qué es un climograma?', a: 'Un gráfico que representa las temperaturas y las precipitaciones de un lugar a lo largo de los meses.' },
+        { t: 'climate', q: '¿Por qué la vegetación varía según el clima?', a: 'Porque las plantas necesitan determinadas condiciones de temperatura y disponibilidad de agua.' }
+      ];
+      const questions = [
+        { t: 'geo', q: '¿Cómo se llama el magma cuando llega a la superficie?', o: ['Lava', 'Granito', 'Humus'], a: 0, e: 'El magma que llega a la superficie se llama lava.' },
+        { t: 'geo', q: '¿Qué fenómeno provoca sacudidas del terreno?', o: ['Una precipitación', 'Un terremoto', 'La fotosíntesis'], a: 1, e: 'Los terremotos provocan sacudidas del terreno.' },
+        { t: 'geo', q: '¿Qué puede salir de un volcán?', o: ['Magma y gases', 'Solo agua dulce', 'Solo sedimentos'], a: 0, e: 'Los volcanes pueden expulsar lava, gases y otros materiales.' },
+        { t: 'rocks', q: '¿Cuál de estas rocas es magmática?', o: ['Granito', 'Carbón', 'Caliza'], a: 0, e: 'El granito es una roca magmática.' },
+        { t: 'rocks', q: '¿Qué roca se forma por presión y temperatura?', o: ['Sedimentaria', 'Metamórfica', 'Un gas'], a: 1, e: 'Las rocas metamórficas cambian por la presión y la temperatura.' },
+        { t: 'rocks', q: '¿Cuál de estos es un mineral?', o: ['Calcita', 'Conglomerado', 'Basalto'], a: 0, e: 'La calcita es un mineral; el conglomerado y el basalto son rocas.' },
+        { t: 'rocks', q: '¿Qué ocurre cuando el material fundido se solidifica?', o: ['Se forma una roca magmática', 'Siempre una roca metamórfica', 'Se convierte en gas'], a: 0, e: 'Las rocas magmáticas proceden del enfriamiento y solidificación del magma o la lava.' },
+        { t: 'earth', q: '¿Cuál es la capa más externa de la geosfera?', o: ['El núcleo', 'La corteza', 'El manto'], a: 1, e: 'La geosfera se divide en corteza, manto y núcleo.' },
+        { t: 'earth', q: '¿Qué parte de la Tierra reúne el agua?', o: ['Hidrosfera', 'Biosfera', 'Núcleo'], a: 0, e: 'La hidrosfera comprende el agua de la Tierra.' },
+        { t: 'earth', q: '¿Dónde se producen los fenómenos meteorológicos?', o: ['En la troposfera', 'En el núcleo', 'En la corteza'], a: 0, e: 'La mayor parte de los fenómenos meteorológicos ocurren en la troposfera.' },
+        { t: 'earth', q: '¿Qué parte de la Tierra está formada por gases?', o: ['Atmósfera', 'Geosfera', 'Hidrosfera'], a: 0, e: 'La atmósfera es la capa gaseosa que rodea la Tierra.' },
+        { t: 'climate', q: '¿Qué describe el clima?', o: ['El tiempo de un solo minuto', 'Las condiciones habituales durante muchos años', 'Solo la temperatura de hoy'], a: 1, e: 'El clima describe patrones observados durante muchos años.' },
+        { t: 'climate', q: '¿Qué zona se encuentra entre los dos trópicos?', o: ['La zona cálida', 'La zona polar', 'Las zonas frías'], a: 0, e: 'La zona cálida se sitúa entre los trópicos de Cáncer y Capricornio.' },
+        { t: 'climate', q: '¿Qué indica la cantidad de lluvia?', o: ['Las precipitaciones', 'El núcleo', 'La biosfera'], a: 0, e: 'Las precipitaciones incluyen la lluvia y otras formas de agua que caen de la atmósfera.' },
+        { t: 'climate', q: '¿Qué clima suele tener muy pocas precipitaciones?', o: ['Desértico', 'Polar siempre húmedo', 'Ecuatorial siempre seco'], a: 0, e: 'Una característica del clima desértico es la escasez de precipitaciones.' },
+        { t: 'climate', q: '¿Por qué no crecen las mismas plantas en todas partes?', o: ['Varían el clima y el agua disponible', 'Todas las plantas necesitan lo mismo', 'Todas las rocas son iguales'], a: 0, e: 'La temperatura y la disponibilidad de agua influyen en la vegetación.' },
+        { t: 'geo', q: '¿Qué puede expulsar una erupción volcánica?', o: ['Lava y cenizas', 'Solo nubes de lluvia', 'La atmósfera entera'], a: 0, e: 'Las erupciones pueden expulsar lava, cenizas y gases.' },
+        { t: 'rocks', q: 'Una roca formada a partir de sedimentos suele ser...', o: ['Sedimentaria', 'Metamórfica', 'Un gas'], a: 0, e: 'Las rocas sedimentarias se forman a partir de sedimentos o por precipitación de sustancias.' }
+      ];
+      let mode = 'learn', topic = 'all', deck = [], idx = 0, flipped = false, score = 0, correct = 0, total = 0, streak = 0, missed = [], qdeck = [], qi = 0, selected = null, answered = false, round = [];
+      const $ = id => document.getElementById(id), filter = a => a.filter(x => topic === 'all' || x.t === topic);
+      function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { let j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } return a }
+      function sh(q) { const p = shuffle(q.o.map((_, i) => i)); return Object.assign({}, q, { o: p.map(i => q.o[i]), a: p.indexOf(q.a) }) }
+      function rank(p) { return p >= 300 ? '🏆 Maestro de la Tierra' : p >= 150 ? '🔬 Científico' : p >= 60 ? '⛏️ Geólogo' : '🧭 Explorador' }
+      function stars(r) { return r >= .9 ? '⭐⭐⭐' : r >= .6 ? '⭐⭐☆' : '⭐☆☆' }
+      function boom() { if (matchMedia('(prefers-reduced-motion:reduce)').matches) return; for (let i = 0; i < 16; i++) { const e = document.createElement('span'); e.textContent = ['⭐', '✨', '🎉', '🌋', '💎'][i % 5]; e.style.cssText = 'position:fixed;left:' + (30 + Math.random() * 40) + 'vw;top:55vh;font-size:1.6rem;pointer-events:none;z-index:9'; document.body.appendChild(e); e.animate([{ transform: 'translate(0,0)', opacity: 1 }, { transform: 'translate(' + (Math.random() * 240 - 120) + 'px,' + (-120 - Math.random() * 160) + 'px) rotate(' + (Math.random() * 360) + 'deg)', opacity: 0 }], { duration: 1100, easing: 'ease-out' }).onfinish = () => e.remove() } }
+      function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])) }
+      function stats() { $('score').textContent = score; $('rk').textContent = rank(score); $('correct').textContent = correct; $('total').textContent = total; $('percent').textContent = total ? Math.round(correct / total * 100) + '%' : '—'; $('motivation').textContent = !total ? 'Empieza con las tarjetas y después prueba el quiz.' : correct === total ? '¡Increíble! Has acertado todas las preguntas que has contestado.' : correct / total >= .8 ? '¡Muy bien! Sigue practicando para afianzar lo aprendido.' : 'Cada error te ayuda a aprender. Repasa y vuelve a intentarlo.'; $('review-list').innerHTML = missed.length ? missed.slice(-10).map(m => '<div class="review-item"><strong>' + esc(m.q) + '</strong><div class="muted">' + esc(m.e) + '</div></div>').join('') : '<p class="muted">Todavía no hay errores guardados. ¡Haz un quiz para empezar!</p>' }
+      function makeDeck() { deck = shuffle(filter(cards)); idx = 0; flipped = false; renderCard() }
+      function renderCard() { if (!deck.length) { $('face-main').textContent = 'No hay tarjetas para este tema'; return } $('card-count').textContent = 'Tarjeta ' + (idx + 1) + ' de ' + deck.length; $('face-label').textContent = flipped ? 'RESPUESTA' : 'PREGUNTA'; $('face-main').textContent = flipped ? deck[idx].a : deck[idx].q; $('face-hint').textContent = flipped ? 'Intenta explicarlo con tus propias palabras' : 'Toca la tarjeta para ver la respuesta'; $('progress').style.width = ((idx + 1) / deck.length * 100) + '%' }
+      function setMode(m) { mode = m;['learn', 'quiz', 'review'].forEach(x => $(x).classList.toggle('hidden', x !== m)); document.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('active', b.dataset.mode === m)); if (m === 'learn') renderCard(); if (m === 'quiz' && (!qdeck.length || qi >= qdeck.length)) startQuiz(); if (m === 'review') stats() }
+      function startQuiz(source) { qdeck = shuffle(source || filter(questions)).slice(0, 10).map(sh); qi = 0; round = []; $('check').classList.remove('hidden'); renderQ() }
+      function renderQ() { if (!qdeck.length) { $('question').textContent = 'No hay preguntas para este tema.'; $('options').innerHTML = ''; $('check').disabled = true; return } if (qi >= qdeck.length) { $('q-count').textContent = 'Ronda completada'; $('question').textContent = '🎉 ¡Has terminado la ronda!'; $('options').innerHTML = '<p class="muted">' + stars(round.filter(x => x.ok).length / round.length) + ' Resultado: ' + round.filter(x => x.ok).length + ' de ' + round.length + ' aciertos. Puedes repetir la ronda o repasar los errores.</p>'; $('feedback').classList.add('hidden'); $('check').classList.add('hidden'); $('next-q').classList.remove('hidden'); $('next-q').textContent = 'Nueva ronda'; $('next-q').onclick = () => startQuiz(); $('progress').style.width = '100%'; return } selected = null; answered = false; const q = qdeck[qi]; $('q-count').textContent = 'Pregunta ' + (qi + 1) + ' de ' + qdeck.length; $('streak').textContent = 'Racha: ' + streak + ' 🔥'; $('question').textContent = q.q; $('feedback').classList.add('hidden'); $('options').innerHTML = q.o.map((v, i) => '<button class="option" type="button" data-i="' + i + '">' + String.fromCharCode(65 + i) + '. ' + esc(v) + '</button>').join(''); $('options').querySelectorAll('button').forEach(b => b.addEventListener('click', () => { if (answered) return; selected = +b.dataset.i; $('options').querySelectorAll('button').forEach(x => x.classList.remove('chosen')); b.classList.add('chosen'); $('check').disabled = false; $('check').click() })); $('check').disabled = true; $('check').classList.remove('hidden'); $('next-q').classList.add('hidden'); $('next-q').onclick = () => { qi++; renderQ() }; $('progress').style.width = (qi / qdeck.length * 100) + '%' }
+      $('flashcard').addEventListener('click', () => { flipped = !flipped; renderCard() }); $('prev').addEventListener('click', () => { idx = (idx - 1 + deck.length) % deck.length; flipped = false; renderCard() }); $('next').addEventListener('click', () => { idx = (idx + 1) % deck.length; flipped = false; renderCard() }); $('shuffle').addEventListener('click', makeDeck); document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode))); $('topic').addEventListener('change', e => { topic = e.target.value; makeDeck(); if (mode === 'quiz') startQuiz(); stats() });
+      $('check').addEventListener('click', () => { if (selected === null || answered) return; answered = true; const q = qdeck[qi], ok = selected === q.a; total++; if (ok) { correct++; score += 10; streak++ } else { streak = 0; missed.push(q) } round.push({ q: q.q, ok }); $('options').querySelectorAll('button').forEach((b, i) => { b.disabled = true; if (i === q.a) b.classList.add('good'); if (i === selected && !ok) b.classList.add('bad') }); $('feedback').textContent = (ok ? (boom(), (streak >= 3 ? '🔥 ¡Racha de ' + streak + '! ' : '✅ ¡Correcto! ')) + '+10 puntos. ' : '🤔 ¡Casi! Era «' + q.o[q.a] + '». ') + q.e; $('feedback').classList.remove('hidden'); $('check').classList.add('hidden'); $('next-q').classList.remove('hidden'); $('next-q').textContent = qi === qdeck.length - 1 ? 'Ver resultado →' : 'Siguiente pregunta →'; stats() });
+      $('review-quiz').addEventListener('click', () => { const deckMissed = missed.map(m => questions.find(q => q.q === m.q)).filter(Boolean); if (deckMissed.length) { setMode('quiz'); startQuiz(deckMissed) } else { $('review-list').innerHTML = '<p class="muted">Primero haz un quiz para guardar preguntas que quieras repasar.</p>' } });
+      $('reset').addEventListener('click', () => { score = correct = total = streak = 0; missed = []; stats(); makeDeck(); if (mode === 'quiz') startQuiz() }); makeDeck(); stats();
+    })();
+  </script>
 </body>
+
 </html>
